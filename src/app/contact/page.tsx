@@ -101,7 +101,7 @@ export default function ContactPage() {
               <h3 className="font-bold text-[#0a1128] text-sm mb-1">WhatsApp Admin</h3>
               <p className="text-slate-600 text-xs leading-relaxed font-light">
                 +62 856-9725-9015<br />
-                Office: +62 21 1234 5678
+                
               </p>
             </div>
           </div>
