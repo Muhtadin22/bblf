@@ -9,9 +9,9 @@ export default function Footer() {
   return (
     <footer className="bg-[#081021] text-slate-300 pt-20 pb-8 relative overflow-hidden border-t-4 border-red-700">
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-red-700/5 rounded-full blur-[140px] -z-10"></div>
-      
+
       <div className="container mx-auto px-6 md:px-12 relative z-10">
-        
+
         {/* Top CTA Banner */}
         <div className="border-b border-white/10 pb-12 mb-14 flex flex-col lg:flex-row justify-between items-center gap-8">
           <div className="text-center lg:text-left max-w-2xl">
@@ -22,8 +22,8 @@ export default function Footer() {
               Dapatkan analisis komprehensif dan strategi penanganan langsung dari advokat berpengalaman kami.
             </p>
           </div>
-          <Link 
-            href="/contact" 
+          <Link
+            href="/contact"
             className="group bg-red-700 hover:bg-red-600 text-white font-bold px-8 py-4 rounded-xl transition-all duration-300 flex items-center gap-3 shadow-xl whitespace-nowrap"
           >
             Jadwalkan Konsultasi <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
@@ -32,16 +32,16 @@ export default function Footer() {
 
         {/* Main Footer Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-16">
-          
+
           {/* LOGO DI FOOTER DENGAN UKURAN LEBIH BESAR */}
           <div className="lg:col-span-4">
             <Link href="/" className="inline-block mb-6 group">
               <div className="h-16 md:h-20 w-auto flex items-center">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img 
-                  src="/bblf.png" 
-                  alt="Bhadrika Byakta Lawfirm Logo" 
-                  className="h-full w-auto object-contain group-hover:scale-105 transition-transform" 
+                <img
+                  src="/bblf.png"
+                  alt="Bhadrika Byakta Lawfirm Logo"
+                  className="h-full w-auto object-contain group-hover:scale-105 transition-transform"
                 />
               </div>
             </Link>
