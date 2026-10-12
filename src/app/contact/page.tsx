@@ -2,13 +2,13 @@
 
 import { useState } from 'react';
 import { motion, AnimatePresence, Variants } from 'framer-motion';
-import { 
-  MapPin, 
-  Phone, 
-  Mail, 
-  Clock, 
-  CheckCircle2, 
-  MessageSquare, 
+import {
+  MapPin,
+  Phone,
+  Mail,
+  Clock,
+  CheckCircle2,
+  MessageSquare,
   Calendar,
   Scale,
   ShieldCheck,
@@ -37,7 +37,7 @@ const consultationTopics = [
 
 // --- DATA: METODE KONSULTASI RESMI ---
 const consultationMethods = [
-  { id: 'chamber', label: 'Tatap Muka di Kantor Firma', icon: Building2, desc: 'Pertemuan di Private Conference Chamber (Silktown Avenue, Serpong Utara)' },
+  { id: 'chamber', label: 'Tatap Muka di Kantor Firma', icon: Building2, desc: 'Pertemuan di Private Conference Chamber ' },
   { id: 'virtual', label: 'Virtual Conference Terenkripsi', icon: Video, desc: 'Sesi video conference privat via platform berstandar enkripsi tinggi' },
   { id: 'onsite', label: 'Pendampingan di Lokasi Klien', icon: Users, desc: 'Khusus pemeriksaan kepolisian, kantor korporasi, atau situasi mendesak' }
 ];
@@ -59,10 +59,10 @@ const containerVariants: Variants = {
 
 const itemVariants: Variants = {
   hidden: { opacity: 0, y: 18 },
-  visible: { 
-    opacity: 1, 
-    y: 0, 
-    transition: { type: 'spring', stiffness: 70, damping: 16 } 
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { type: 'spring', stiffness: 70, damping: 16 }
   }
 };
 
@@ -137,10 +137,10 @@ export default function ContactPage() {
 
   return (
     <div className="selection:bg-[#C5A880] selection:text-[#0F1E36] bg-[#F8F6F0] text-[#0F1E36] font-sans overflow-hidden">
-      
+
       {/* 1. HERO SECTION: PORTAL KOMUNIKASI & PRIVILEGE ADVOKAT */}
       <section className="relative min-h-[60vh] flex items-center justify-center bg-[#0F1E36] overflow-hidden pt-36 pb-20 border-b border-[#C5A880]/20">
-        
+
         {/* Dekorasi Latar & Radial Glow */}
         <div className="absolute inset-0 z-0 pointer-events-none opacity-30">
           <div className="absolute -top-36 -right-24 w-[600px] h-[600px] bg-[#C5A880]/10 rounded-full blur-[140px]" />
@@ -192,7 +192,7 @@ export default function ContactPage() {
       <section className="relative z-20 -mt-10 px-6 md:px-12 mb-14">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            
+
             {/* Card 1: Kantor Pusat */}
             <div className="bg-[#0F1E36] text-[#F8F6F0] p-7 rounded-2xl border-2 border-[#C5A880]/30 shadow-xl flex flex-col justify-between group hover:border-[#C5A880] transition-colors">
               <div>
@@ -284,9 +284,9 @@ export default function ContactPage() {
       {/* 3. KOMPLEKS FORM INTAKE & EXECUTIVE FAST-TRACK + MAP */}
       <section className="py-12 pb-24">
         <div className="container mx-auto px-6 md:px-12">
-          
+
           <div className="bg-white rounded-3xl shadow-2xl border border-[#0F1E36]/15 overflow-hidden flex flex-col lg:flex-row">
-            
+
             {/* SISI KIRI: FORMULIR INTAKE RESMI (60%) */}
             <div className="p-8 md:p-14 lg:w-7/12 flex flex-col justify-between">
               <div>
@@ -303,7 +303,7 @@ export default function ContactPage() {
 
                 <AnimatePresence mode="wait">
                   {isSubmitted ? (
-                    <motion.div 
+                    <motion.div
                       initial={{ opacity: 0, scale: 0.95 }}
                       animate={{ opacity: 1, scale: 1 }}
                       className="bg-[#0F1E36] text-[#F8F6F0] border-2 border-[#C5A880] rounded-2xl p-8 text-center py-12"
@@ -321,7 +321,7 @@ export default function ContactPage() {
                       {/* Tombol Langsung Buka WhatsApp jika Popup Diblokir */}
                       <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
                         {submittedWhatsappUrl && (
-                          <a 
+                          <a
                             href={submittedWhatsappUrl}
                             target="_blank"
                             rel="noopener noreferrer"
@@ -332,10 +332,10 @@ export default function ContactPage() {
                           </a>
                         )}
 
-                        <button 
-                          onClick={() => { 
-                            setIsSubmitted(false); 
-                            setFormData({ name: '', company: '', email: '', phone: '', message: '' }); 
+                        <button
+                          onClick={() => {
+                            setIsSubmitted(false);
+                            setFormData({ name: '', company: '', email: '', phone: '', message: '' });
                           }}
                           className="w-full sm:w-auto bg-[#142847] hover:bg-[#1c365f] text-[#F8F6F0] font-semibold px-6 py-3.5 rounded-xl text-xs uppercase tracking-wider transition-all border border-[#C5A880]/30"
                         >
@@ -345,7 +345,7 @@ export default function ContactPage() {
                     </motion.div>
                   ) : (
                     <form onSubmit={handleSubmit} className="space-y-6">
-                      
+
                       {/* Pilihan 1: Kategori Pokok Perkara */}
                       <div>
                         <label className="block text-xs font-mono font-bold text-[#0F1E36] uppercase tracking-wider mb-2.5">
@@ -359,16 +359,14 @@ export default function ContactPage() {
                                 key={topic.id}
                                 type="button"
                                 onClick={() => setSelectedTopic(topic.label)}
-                                className={`p-3 rounded-xl text-left text-xs transition-all border flex items-center justify-between ${
-                                  isSelected 
-                                    ? 'bg-[#0F1E36] text-[#C5A880] border-[#C5A880] font-bold shadow-sm' 
+                                className={`p-3 rounded-xl text-left text-xs transition-all border flex items-center justify-between ${isSelected
+                                    ? 'bg-[#0F1E36] text-[#C5A880] border-[#C5A880] font-bold shadow-sm'
                                     : 'bg-[#F8F6F0] text-[#0F1E36] border-[#0F1E36]/10 hover:border-[#C5A880]'
-                                }`}
+                                  }`}
                               >
                                 <span className="truncate pr-2">{topic.label}</span>
-                                <span className={`text-[9px] font-mono px-1.5 py-0.5 rounded uppercase font-semibold ${
-                                  isSelected ? 'bg-[#142847] text-[#C5A880]' : 'bg-white text-[#0F1E36]/60'
-                                }`}>
+                                <span className={`text-[9px] font-mono px-1.5 py-0.5 rounded uppercase font-semibold ${isSelected ? 'bg-[#142847] text-[#C5A880]' : 'bg-white text-[#0F1E36]/60'
+                                  }`}>
                                   {topic.badge}
                                 </span>
                               </button>
@@ -391,11 +389,10 @@ export default function ContactPage() {
                                 key={method.id}
                                 type="button"
                                 onClick={() => setSelectedMethod(method.id)}
-                                className={`p-3.5 rounded-xl text-left border transition-all flex flex-col justify-between ${
-                                  isSelected 
-                                    ? 'bg-[#0F1E36] text-[#F8F6F0] border-[#C5A880] shadow' 
+                                className={`p-3.5 rounded-xl text-left border transition-all flex flex-col justify-between ${isSelected
+                                    ? 'bg-[#0F1E36] text-[#F8F6F0] border-[#C5A880] shadow'
                                     : 'bg-[#F8F6F0] text-[#0F1E36] border-[#0F1E36]/10 hover:border-[#C5A880]'
-                                }`}
+                                  }`}
                               >
                                 <div className="flex items-center justify-between mb-2">
                                   <Icon size={18} className={isSelected ? 'text-[#C5A880]' : 'text-[#0F1E36]'} />
@@ -423,12 +420,12 @@ export default function ContactPage() {
                             <span className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-[#0F1E36]/40">
                               <Calendar size={16} />
                             </span>
-                            <input 
-                              type="date" 
+                            <input
+                              type="date"
                               required
                               value={preferredDate}
                               onChange={(e) => setPreferredDate(e.target.value)}
-                              className="w-full pl-10 pr-4 py-3 rounded-xl border border-[#0F1E36]/15 focus:outline-none focus:border-[#C5A880] bg-[#F8F6F0] text-xs font-medium text-[#0F1E36] transition-colors" 
+                              className="w-full pl-10 pr-4 py-3 rounded-xl border border-[#0F1E36]/15 focus:outline-none focus:border-[#C5A880] bg-[#F8F6F0] text-xs font-medium text-[#0F1E36] transition-colors"
                             />
                           </div>
                         </div>
@@ -437,7 +434,7 @@ export default function ContactPage() {
                           <label className="block text-xs font-mono font-bold text-[#0F1E36] uppercase tracking-wider mb-2">
                             4. Alokasi Sesi Waktu *
                           </label>
-                          <select 
+                          <select
                             value={selectedSlot}
                             onChange={(e) => setSelectedSlot(e.target.value)}
                             className="w-full px-4 py-3 rounded-xl border border-[#0F1E36]/15 focus:outline-none focus:border-[#C5A880] bg-[#F8F6F0] text-xs font-medium text-[#0F1E36] transition-colors"
@@ -456,13 +453,13 @@ export default function ContactPage() {
                             <label className="block text-xs font-mono font-bold text-[#0F1E36] uppercase tracking-wider mb-1.5">
                               Nama Lengkap Klien / Pemohon *
                             </label>
-                            <input 
-                              type="text" 
+                            <input
+                              type="text"
                               required
                               value={formData.name}
-                              onChange={(e) => setFormData({...formData, name: e.target.value})}
-                              className="w-full px-4 py-3 rounded-xl border border-[#0F1E36]/15 focus:outline-none focus:border-[#C5A880] bg-[#F8F6F0] text-xs text-[#0F1E36] transition-colors" 
-                              placeholder="Contoh: Hendra Wijaya, S.E." 
+                              onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                              className="w-full px-4 py-3 rounded-xl border border-[#0F1E36]/15 focus:outline-none focus:border-[#C5A880] bg-[#F8F6F0] text-xs text-[#0F1E36] transition-colors"
+                              placeholder="Contoh: Hendra Wijaya, S.E."
                             />
                           </div>
 
@@ -470,12 +467,12 @@ export default function ContactPage() {
                             <label className="block text-xs font-mono font-bold text-[#0F1E36] uppercase tracking-wider mb-1.5">
                               Nama Korporasi / Entitas Bisnis (Opsional)
                             </label>
-                            <input 
-                              type="text" 
+                            <input
+                              type="text"
                               value={formData.company}
-                              onChange={(e) => setFormData({...formData, company: e.target.value})}
-                              className="w-full px-4 py-3 rounded-xl border border-[#0F1E36]/15 focus:outline-none focus:border-[#C5A880] bg-[#F8F6F0] text-xs text-[#0F1E36] transition-colors" 
-                              placeholder="Contoh: PT Surya Nusantara" 
+                              onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+                              className="w-full px-4 py-3 rounded-xl border border-[#0F1E36]/15 focus:outline-none focus:border-[#C5A880] bg-[#F8F6F0] text-xs text-[#0F1E36] transition-colors"
+                              placeholder="Contoh: PT Surya Nusantara"
                             />
                           </div>
                         </div>
@@ -485,13 +482,13 @@ export default function ContactPage() {
                             <label className="block text-xs font-mono font-bold text-[#0F1E36] uppercase tracking-wider mb-1.5">
                               Email Profesional / Korespondensi *
                             </label>
-                            <input 
-                              type="email" 
+                            <input
+                              type="email"
                               required
                               value={formData.email}
-                              onChange={(e) => setFormData({...formData, email: e.target.value})}
-                              className="w-full px-4 py-3 rounded-xl border border-[#0F1E36]/15 focus:outline-none focus:border-[#C5A880] bg-[#F8F6F0] text-xs text-[#0F1E36] transition-colors" 
-                              placeholder="hendra@perusahaan.com" 
+                              onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                              className="w-full px-4 py-3 rounded-xl border border-[#0F1E36]/15 focus:outline-none focus:border-[#C5A880] bg-[#F8F6F0] text-xs text-[#0F1E36] transition-colors"
+                              placeholder="hendra@perusahaan.com"
                             />
                           </div>
 
@@ -499,13 +496,13 @@ export default function ContactPage() {
                             <label className="block text-xs font-mono font-bold text-[#0F1E36] uppercase tracking-wider mb-1.5">
                               Nomor Telepon / WhatsApp Aktif *
                             </label>
-                            <input 
-                              type="tel" 
+                            <input
+                              type="tel"
                               required
                               value={formData.phone}
-                              onChange={(e) => setFormData({...formData, phone: e.target.value})}
-                              className="w-full px-4 py-3 rounded-xl border border-[#0F1E36]/15 focus:outline-none focus:border-[#C5A880] bg-[#F8F6F0] text-xs text-[#0F1E36] transition-colors" 
-                              placeholder="+62 812 3456 7890" 
+                              onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                              className="w-full px-4 py-3 rounded-xl border border-[#0F1E36]/15 focus:outline-none focus:border-[#C5A880] bg-[#F8F6F0] text-xs text-[#0F1E36] transition-colors"
+                              placeholder="+62 812 3456 7890"
                             />
                           </div>
                         </div>
@@ -515,12 +512,12 @@ export default function ContactPage() {
                           <label className="block text-xs font-mono font-bold text-[#0F1E36] uppercase tracking-wider mb-1.5">
                             Rincian Pokok Perkara / Uraian Kasus *
                           </label>
-                          <textarea 
-                            rows={4} 
+                          <textarea
+                            rows={4}
                             required
                             value={formData.message}
-                            onChange={(e) => setFormData({...formData, message: e.target.value})}
-                            className="w-full px-4 py-3 rounded-xl border border-[#0F1E36]/15 focus:outline-none focus:border-[#C5A880] bg-[#F8F6F0] text-xs text-[#0F1E36] resize-none transition-colors" 
+                            onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                            className="w-full px-4 py-3 rounded-xl border border-[#0F1E36]/15 focus:outline-none focus:border-[#C5A880] bg-[#F8F6F0] text-xs text-[#0F1E36] resize-none transition-colors"
                             placeholder="Sampaikan kronologi atau pokok permasalahan hukum yang Anda hadapi (misal: surat panggilan penyidik, wanprestasi kontrak komersial, sengketa tanah, dll)..."
                           />
                         </div>
@@ -528,7 +525,7 @@ export default function ContactPage() {
 
                       {/* Checkbox Perlindungan Kerahasiaan */}
                       <div className="flex items-start gap-3 p-3.5 rounded-xl bg-[#F8F6F0] border border-[#0F1E36]/10 text-xs text-[#0F1E36]/80">
-                        <input 
+                        <input
                           type="checkbox"
                           id="privilege-check"
                           checked={hasAgreedPrivilege}
@@ -542,8 +539,8 @@ export default function ContactPage() {
                       </div>
 
                       {/* Tombol Submit WhatsApp */}
-                      <button 
-                        type="submit" 
+                      <button
+                        type="submit"
                         disabled={isSubmitting || !hasAgreedPrivilege}
                         className="w-full bg-[#0F1E36] hover:bg-[#142847] text-[#C5A880] font-bold py-4 rounded-xl transition-all shadow-xl shadow-black/20 text-xs uppercase tracking-wider flex items-center justify-center gap-2 border-2 border-[#C5A880] disabled:opacity-50"
                       >
@@ -570,29 +567,29 @@ export default function ContactPage() {
 
             {/* SISI KANAN: EXECUTIVE FAST-TRACK & GOOGLE MAPS (40%) */}
             <div className="lg:w-5/12 bg-[#0F1E36] text-[#F8F6F0] flex flex-col justify-between border-t lg:border-t-0 lg:border-l border-[#C5A880]/30 relative overflow-hidden">
-              
+
               {/* Box Fast-Track Tindakan Mendesak */}
               <div className="p-8 md:p-10 border-b border-[#C5A880]/20 bg-[#142847]/80">
                 <div className="inline-flex items-center gap-2 text-[10px] font-mono uppercase tracking-widest text-[#C5A880] font-bold mb-2">
                   <AlertTriangle size={14} /> Jalur Khusus Darurat
                 </div>
-                
+
                 <h4 className="font-serif text-2xl font-bold text-[#F8F6F0] mb-2 leading-snug">
                   Pendampingan BAP atau Tindakan Penahanan?
                 </h4>
-                
+
                 <p className="text-[#F8F6F0]/75 text-xs leading-relaxed font-normal mb-6">
                   Jika Anda atau kerabat sedang menghadapi pemanggilan mendadak di Kepolisian, Kejaksaan, atau penindakan hukum acara, segera hubungi sambungan prioritas kami:
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-3">
-                  <a 
+                  <a
                     href="tel:+6285697259015"
                     className="flex-1 bg-[#C5A880] hover:bg-[#b8996e] text-[#0F1E36] px-4 py-3 rounded-xl font-bold text-xs uppercase tracking-wider transition-all shadow-lg flex items-center justify-center gap-2"
                   >
                     <Phone size={15} /> Panggil (+62 856-9725-9015)
                   </a>
-                  <a 
+                  <a
                     href="https://wa.me/6285697259015?text=Halo%20BBLF,%20saya%20membutuhkan%20pendampingan%20hukum%20darurat%20segera."
                     target="_blank"
                     rel="noopener noreferrer"
@@ -605,11 +602,11 @@ export default function ContactPage() {
 
               {/* Peta Lokasi Kantor Pusat: Ruko Silktown Avenue */}
               <div className="relative flex-1 min-h-[380px] bg-[#0A1424] flex flex-col justify-end">
-                <iframe 
+                <iframe
                   src={`https://maps.google.com/maps?q=${encodeURIComponent(fullAddress)}&t=&z=16&ie=UTF8&iwloc=&output=embed`}
-                  className="absolute inset-0 w-full h-full border-0 filter grayscale-[20%] contrast-115 opacity-90" 
-                  allowFullScreen={false} 
-                  loading="lazy" 
+                  className="absolute inset-0 w-full h-full border-0 filter grayscale-[20%] contrast-115 opacity-90"
+                  allowFullScreen={false}
+                  loading="lazy"
                   title="Peta Lokasi Kantor Pusat Bhadrika Byakta Law Firm - Silktown Avenue"
                 />
 
