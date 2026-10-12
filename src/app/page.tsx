@@ -423,7 +423,7 @@ export default function Home() {
                         BB
                       </div>
                       <div>
-                        <h5 className="text-xs font-bold text-[#F8F6F0]">Dr. Bhadrika Daniswara, S.H., LL.M.</h5>
+                        <h5 className="text-xs font-bold text-[#F8F6F0]">MANTRI ADIETIA S.H.,C.PLO.</h5>
                         <p className="text-[10px] text-[#C5A880]">Managing Partner & Advokat Litigasi</p>
                       </div>
                     </div>
