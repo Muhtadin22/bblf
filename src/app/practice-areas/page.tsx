@@ -24,34 +24,34 @@ import {
   BookOpenCheck
 } from 'lucide-react';
 
-// --- DATA: SPESIALISASI UTAMA (LITIGASI PIDANA DENGAN PASAL KUHP BARU UU NO. 1/2023) ---
+// --- DATA: SPESIALISASI UTAMA (LITIGASI PIDANA DENGAN DESKRIPSI KUHP BARU & PERATURAN TERBARU) ---
 const criminalDefenseServices = [
   {
     id: 'white-collar',
     title: 'Tindak Pidana Bisnis & Korporasi',
-    subtitle: 'White-Collar & Corporate Crime',
-    kuhpAnchor: 'UU No. 1/2023 (KUHP Baru) & Regulasi Sektoral',
-    desc: 'Pembelaan hukum tingkat tinggi atas dugaan delik korporasi yang menyasar jajaran direksi, dewan komisaris, pemegang saham, serta pertanggungjawaban pidana korporasi sebagai subjek hukum.',
+    subtitle: 'White-Collar & Corporate Crime Defense',
+    kuhpAnchor: 'UU No. 1/2023 (KUHP Baru), UU P2SK No. 4/2023, & UU TPPU No. 8/2010',
+    desc: 'Pembelaan hukum strategis atas dugaan delik korporasi di bawah rezim UU No. 1 Tahun 2023 (KUHP Baru) yang mengatur pertanggungjawaban pidana korporasi secara komprehensif, diselaraskan dengan rezim tindak pidana sektor keuangan (UU No. 4/2023 - P2SK) serta penanganan tindak pidana pencucian uang (UU No. 8/2010 - TPPU) guna mengamankan hak direksi, komisaris, dan kesinambungan entitas bisnis.',
     pasalItems: [
       {
-        delik: 'Penipuan Komersial & Investasi',
-        pasal: 'Pasal 492 KUHP Baru',
-        ket: 'Tindakan tipu muslihat atau rangkaian kebohongan untuk menguntungkan diri/korporasi secara melawan hukum (pengganti Pasal 378 KUHP lama).'
+        delik: 'Penipuan Komersial & Kerugian Investasi',
+        pasal: 'Pasal 492 UU No. 1/2023 (KUHP Baru)',
+        ket: 'Pembelaan atas tuduhan tipu muslihat atau rangkaian narasi palsu dalam perjanjian bisnis dan pendanaan (menggantikan Pasal 378 KUHP lama).'
       },
       {
-        delik: 'Penggelapan & Penggelapan dalam Jabatan',
-        pasal: 'Pasal 486 & Pasal 488 KUHP Baru',
-        ket: 'Penggelapan barang/dana milik perusahaan yang berada dalam penguasaannya karena hubungan kerja atau jabatan (pengganti Pasal 372 & 374 KUHP lama).'
+        delik: 'Penggelapan & Penggelapan dalam Hubungan Kerja',
+        pasal: 'Pasal 486 & Pasal 488 UU No. 1/2023 (KUHP Baru)',
+        ket: 'Penanganan dugaan penyalahgunaan dana, aset, atau kewenangan perseroan oleh pejabat internal dan eksekutif (menggantikan Pasal 372 & 374 KUHP lama).'
       },
       {
-        delik: 'Pertanggungjawaban Pidana Korporasi',
-        pasal: 'Pasal 45 s/d Pasal 50 KUHP Baru',
-        ket: 'Konstruksi pemidanaan korporasi, pertanggungjawaban personal pengurus (directors liability), pihak pengendali, serta pemberi perintah kejahatan.'
+        delik: 'Pertanggungjawaban Pidana Korporasi (Corporate Liability)',
+        pasal: 'Pasal 45 s/d Pasal 50 UU No. 1/2023 (KUHP Baru)',
+        ket: 'Konstruksi hukum pembelaan subjek hukum korporasi, pemisahan tanggung jawab pidana fungsional pengurus (directors liability), dan pengendali korporasi.'
       },
       {
-        delik: 'Tindak Pidana Pencucian Uang & Jasa Keuangan',
-        pasal: 'Pasal 607 KUHP Baru jo. UU No. 8/2010 (TPPU) & UU No. 4/2023 (P2SK)',
-        ket: 'Penanganan dugaan penempatan aset hasil tindak pidana, transaksi perbankan mencurigakan, dan pelanggaran pasar modal.'
+        delik: 'Tindak Pidana Pencucian Uang & Kejahatan Sektor Keuangan',
+        pasal: 'Pasal 607 KUHP Baru jo. UU No. 8/2010 & UU No. 4/2023 (P2SK)',
+        ket: 'Advokasi atas pemblokiran rekening operasional, sangkaan tindak pidana perbankan, transaksi pasar modal, serta penelusuran aset hasil tindak pidana.'
       }
     ],
     icon: Building2
@@ -59,29 +59,29 @@ const criminalDefenseServices = [
   {
     id: 'praperadilan-prosedural',
     title: 'Praperadilan & Pembelaan Hak Acara Pidana',
-    subtitle: 'Pre-Trial Motion & Procedural Due Process',
-    kuhpAnchor: 'KUHAP (UU No. 8/1981) jo. Putusan Mahkamah Konstitusi',
-    desc: 'Pengujian materiil dan formil di hadapan Hakim Tunggal Pengadilan Negeri guna membatalkan tindakan penyidik kepolisian, kejaksaan, atau penyidik khusus yang cacat prosedur hukum acara.',
+    subtitle: 'Pre-Trial Motion & Due Process Enforcement',
+    kuhpAnchor: 'KUHAP (UU No. 8/1981) jo. Putusan Mahkamah Konstitusi No. 21/PUU-XII/2014',
+    desc: 'Pengujian formil dan materiil di hadapan Hakim Tunggal Pengadilan Negeri berdasarkan Pasal 77 KUHAP jo. Putusan Mahkamah Konstitusi No. 21/PUU-XII/2014 guna menguji kepatuhan due process of law penyidik kepolisian, kejaksaan, maupun penyidik khusus, membatalkan penetapan status tersangka yang tidak berdasar, serta menghentikan upaya paksa yang melanggar prosedur hukum acara.',
     pasalItems: [
       {
         delik: 'Uji Keabsahan Penetapan Tersangka',
         pasal: 'Pasal 77 huruf a KUHAP jo. Putusan MK No. 21/PUU-XII/2014',
-        ket: 'Pembatalan status tersangka akibat tidak terpenuhinya syarat minimal 2 (dua) alat bukti yang sah dan pemeriksaan calon tersangka.'
+        ket: 'Gugatan pembatalan penetapan status tersangka yang diterbitkan tanpa didukung minimal dua alat bukti sah dan tanpa pemeriksaan calon tersangka.'
       },
       {
         delik: 'Uji Keabsahan Penangkapan & Penahanan',
         pasal: 'Pasal 17, 18, 20 & 21 KUHAP',
-        ket: 'Praperadilan atas tindakan penangkapan atau penahanan yang melanggar batas waktu, tanpa surat perintah sah, atau tanpa dasar urgensi objektif.'
+        ket: 'Pengujian legalitas upaya paksa penahanan yang dilakukan sewenang-wenang, tanpa surat perintah sah, atau tanpa pemenuhan syarat urgensi objektif.'
       },
       {
-        delik: 'Uji Keabsahan Penggeledahan & Penyitaan Barang Bukti',
+        delik: 'Uji Prosedur Penyitaan Dokumen & Aset Perusahaan',
         pasal: 'Pasal 33, 34, 38 & 39 KUHAP',
-        ket: 'Uji materiil atas penyitaan aset atau dokumen perusahaan yang dilakukan tanpa izin resmi Ketua Pengadilan Negeri setempat.'
+        ket: 'Pembatalan penyitaan berkas perseroan atau pemblokiran aset komersial yang dilakukan aparat tanpa izin resmi Ketua Pengadilan Negeri.'
       },
       {
-        delik: 'Ganti Kerugian & Pemulihan Rehabilitasi Nama Baik',
+        delik: 'Tuntutan Ganti Kerugian & Pemulihan Nama Baik',
         pasal: 'Pasal 95 s/d Pasal 97 KUHAP',
-        ket: 'Tuntutan kompensasi kerugian materiil serta kewajiban rehabilitasi kehormatan akibat tindakan penegakan hukum yang dinyatakan tidak sah.'
+        ket: 'Tuntutan kompensasi kerugian materiil serta perintah rehabilitasi harkat dan martabat atas tindakan penegakan hukum yang dinyatakan cacat hukum.'
       }
     ],
     icon: Scale
@@ -89,29 +89,29 @@ const criminalDefenseServices = [
   {
     id: 'khusus-siber-tipikor',
     title: 'Pidana Khusus, Siber, Tipikor, & Perpajakan',
-    subtitle: 'Special Offenses, Cyber Crime & Anti-Corruption',
-    kuhpAnchor: 'KUHP Baru, UU ITE No. 1/2024, UU Tipikor, UU HPP',
-    desc: 'Advokasi berakurasi pembuktian tinggi menghadapi investigasi kejahatan digital terorganisir, sengketa perpajakan bernilai besar, serta penanganan perkara anti-korupsi di hadapan penegak hukum.',
+    subtitle: 'Special Offenses, Cyber Defense & Tax Crimes',
+    kuhpAnchor: 'KUHP Baru, UU ITE No. 1/2024, UU Tipikor, UU HPP No. 7/2021',
+    desc: 'Pendampingan hukum strategis menghadapi pemeriksaan dugaan tindak pidana teknologi informasi di bawah UU No. 1 Tahun 2024 (Perubahan Kedua UU ITE), tindak pidana korupsi sektor publik dan suap korporasi (Pasal 603-606 KUHP Baru), serta penanganan sanksi pidana perpajakan berdasarkan UU Harmonisasi Peraturan Perpajakan (UU No. 7/2021) dengan pendekatan audit forensik digital.',
     pasalItems: [
       {
-        delik: 'Tindak Pidana Korupsi & Suap Komersial',
-        pasal: 'Pasal 603, 604, 605, & 606 KUHP Baru',
-        ket: 'Delik kerugian keuangan negara, penyalahgunaan wewenang jabatan, suap aktif, dan suap pasif dalam pengadaan barang/jasa pemerintah.'
+        delik: 'Tindak Pidana Korupsi & Suap Sektor Komersial',
+        pasal: 'Pasal 603 s/d Pasal 606 UU No. 1/2023 (KUHP Baru)',
+        ket: 'Pembelaan atas sangkaan kerugian keuangan negara, gratifikasi, penyalahgunaan wewenang jabatan, suap aktif, dan suap pasif dalam pengadaan barang/jasa.'
       },
       {
-        delik: 'Tindak Pidana Siber & Informasi Elektronik',
+        delik: 'Tindak Pidana Siber & Sistem Transaksi Elektronik',
         pasal: 'Pasal 332 KUHP Baru jo. Pasal 27A, 28, & 30 UU No. 1/2024 (ITE)',
-        ket: 'Akses ilegal sistem perbankan/database perusahaan, manipulasi dokumen elektronik, dan penyebaran informasi bohong yang merugikan konsumen.'
+        ket: 'Penanganan dugaan akses ilegal data perusahaan, manipulasi dokumen elektronik, penyebaran informasi palsu yang menimbulkan kerugian komersial, dan kebocoran data.'
       },
       {
-        delik: 'Tindak Pidana Perpajakan & Bea Cukai',
-        pasal: 'Pasal 39 & 39A UU No. 28/2007 (UU KUP) jo. UU No. 7/2021 (HPP)',
-        ket: 'Dugaan penerbitan faktur pajak tidak berdasarkan transaksi sebenarnya (faktur fiktif) dan penggelapan kewajiban pajak perseroan.'
+        delik: 'Tindak Pidana Perpajakan & Cukai Kepabeanan',
+        pasal: 'Pasal 39 & 39A UU No. 28/2007 jo. UU No. 7/2021 (UU HPP)',
+        ket: 'Advokasi pemeriksaan bukti permulaan (Bukper) pajak, dugaan faktur pajak fiktif, serta negosiasi ultimum remedium pemulihan kerugian pendapatan negara.'
       },
       {
-        delik: 'Perlindungan Saksi & Whistleblower Korporasi',
+        delik: 'Proteksi Saksi Kunci & Whistleblower Korporasi',
         pasal: 'UU No. 31/2014 tentang Perlindungan Saksi dan Korban (LPSK)',
-        ket: 'Pendampingan immunitas hukum bagi pihak internal perusahaan yang membongkar praktik pelanggaran hukum berisiko.'
+        ket: 'Pendampingan immunitas hukum dan kerahasiaan identitas bagi eksekutif perusahaan yang beritikad baik mengungkap praktik pelanggaran hukum internal.'
       }
     ],
     icon: ShieldAlert
@@ -119,76 +119,76 @@ const criminalDefenseServices = [
   {
     id: 'umum-perlindungan-hak',
     title: 'Pidana Umum & Perlindungan Hak Warga Negara',
-    subtitle: 'General Criminal Defense & Personal Rights',
-    kuhpAnchor: 'UU No. 1/2023 (KUHP Baru)',
-    desc: 'Pembelaan komprehensif bagi individu yang berhadapan dengan proses hukum delik KUHP umum, memastikan seluruh hak konstitusional tersangka/terdakwa dihormati secara mutlak sejak tahap penyelidikan.',
+    subtitle: 'General Criminal Defense & Constitutional Rights',
+    kuhpAnchor: 'UU No. 1/2023 (KUHP Baru) & Perlindungan HAM Peradilan',
+    desc: 'Pembelaan litigasi menyeluruh bagi individu yang menghadapi sangkaan delik KUHP Baru (UU No. 1 Tahun 2023) yang menggantikan WvS kolonial, memastikan pemenuhan hak-hak tersangka/terdakwa atas delik kehormatan, pemalsuan dokumen, perampasan kemerdekaan, maupun pembelaan darurat (noodweer) sejak pemeriksaan Berita Acara Pemeriksaan (BAP) di Kepolisian hingga vonis peradilan.',
     pasalItems: [
       {
-        delik: 'Pencemaran Nama Baik & Fitnah Tertulis',
-        pasal: 'Pasal 433 & Pasal 434 KUHP Baru',
-        ket: 'Menyerang kehormatan atau nama baik seseorang dengan tuduhan tertentu (pengganti Pasal 310 & 311 KUHP lama).'
+        delik: 'Pencemaran Kehormatan, Menista, & Fitnah',
+        pasal: 'Pasal 433 & Pasal 434 UU No. 1/2023 (KUHP Baru)',
+        ket: 'Pembelaan delik aduan pencemaran kehormatan atau fitnah tertulis dengan pembuktian fakta untuk kepentingan umum (menggantikan Pasal 310 & 311 KUHP lama).'
       },
       {
-        delik: 'Pemalsuan Surat & Akta Otentik',
-        pasal: 'Pasal 391 & Pasal 392 KUHP Baru',
-        ket: 'Membuat surat palsu atau memalsukan akta otentik yang dapat menimbulkan kerugian bagi pihak lain (pengganti Pasal 263 & 264 KUHP lama).'
+        delik: 'Pemalsuan Surat & Manipulasi Dokumen Otentik',
+        pasal: 'Pasal 391 & Pasal 392 UU No. 1/2023 (KUHP Baru)',
+        ket: 'Pembuktian keaslian materiil surat perjanjian, akta notaris, dan sertifikat yang dituduhkan palsu (menggantikan Pasal 263 & 264 KUHP lama).'
       },
       {
-        delik: 'Perampasan Kemerdekaan & Penyekapan',
-        pasal: 'Pasal 446 KUHP Baru',
-        ket: 'Menahan atau merampas kemerdekaan seseorang secara melawan hukum (pengganti Pasal 333 KUHP lama).'
+        delik: 'Perampasan Kemerdekaan Fisik & Penyekapan',
+        pasal: 'Pasal 446 UU No. 1/2023 (KUHP Baru)',
+        ket: 'Pembelaan atas tuduhan penahanan atau pembatasan kebebasan seseorang tanpa dasar hukum yang sah (menggantikan Pasal 333 KUHP lama).'
       },
       {
-        delik: 'Delik Terhadap Integritas Tubuh & Penganiayaan',
-        pasal: 'Pasal 466 s/d Pasal 471 KUHP Baru',
-        ket: 'Pembelaan pembuktian materiil atas tuduhan penganiayaan, pembelaan terpaksa (noodweer Pasal 34 KUHP Baru), dan daya paksa.'
+        delik: 'Integritas Fisik & Pembelaan Terpaksa (Noodweer)',
+        pasal: 'Pasal 466 s/d 471 jo. Alasan Pembenar Pasal 34 KUHP Baru',
+        ket: 'Pembelaan atas tuduhan penganiayaan dengan pengujian alasan pembenar bela paksa guna melindungi keselamatan diri, kehormatan, atau harta benda.'
       }
     ],
     icon: Gavel
   }
 ];
 
-// --- DATA: SPESIALISASI PENDUKUNG (SENGKETA PERDATA & KOMERSIAL DENGAN DASAR PASAL) ---
+// --- DATA: SPESIALISASI PENDUKUNG (SENGKETA PERDATA, KOMERSIAL, AGRARIA DENGAN REGULASI TERBARU) ---
 const civilCommercialServices = [
   {
     id: 'wanprestasi-kontrak',
     title: 'Sengketa Kontrak & Wanprestasi Bisnis',
-    subtitle: 'Breach of Contract & Commercial Recovery',
-    legalAnchor: 'Pasal 1238, 1243 s/d 1246 KUHPerdata (Buku III)',
-    desc: 'Penanganan ingkar janji kontraktual, pembatalan sepihak, eksekusi pemulihan kerugian bunga komersial (moratoir), serta gugatan di Pengadilan Negeri dan forum Arbitrase.',
+    subtitle: 'Breach of Contract & Commercial Dispute Litigation',
+    legalAnchor: 'Pasal 1238, 1243 s/d 1246 KUHPerdata jo. Perma No. 7/2022',
+    desc: 'Penanganan ingkar janji kontraktual komersial berlandaskan asas itikad baik (Pasal 1338 ayat 3 KUHPerdata), penuntutan ganti rugi bunga moratoir, eksekusi sita jaminan perdata, serta beracara melalui sistem peradilan elektronik modern Mahkamah Agung (E-Litigation).',
     pasalDetails: [
-      'Somasi Resmi Berdasarkan Pasal 1238 KUHPerdata',
-      'Tuntutan Ganti Biaya, Rugi, & Bunga Berdasarkan Pasal 1243 KUHPerdata',
-      'Pembatalan Perjanjian Timbal Balik Berdasarkan Pasal 1266 KUHPerdata',
-      'Penyelesaian Klausul Arbitrase Komersial (UU No. 30/1999 tentang AAPS)'
+      'Penyusunan Somasi Peringatan Yuridis (Ingebrekestelling - Pasal 1238 KUHPerdata)',
+      'Gugatan Ganti Biaya, Rugi, & Bunga Komersial (Pasal 1243 s/d 1246 KUHPerdata)',
+      'Gugatan Pembatalan Kontrak Timbal Balik Sepihak (Pasal 1266 KUHPerdata)',
+      'Penyelesaian Sengketa Klausul Arbitrase Bisnis (UU No. 30/1999 tentang AAPS)'
     ],
     icon: FileText
   },
   {
     id: 'pmh-kompensasi',
     title: 'Perbuatan Melawan Hukum (PMH) & Ganti Rugi',
-    subtitle: 'Tort Law & Material/Immaterial Damages Claims',
+    subtitle: 'Tort Law, Vicarious Liability & Damages Claims',
     legalAnchor: 'Pasal 1365, 1366, & 1367 Kitab Undang-Undang Hukum Perdata',
-    desc: 'Litigasi gugatan kompensasi atas tindakan melawan hukum pihak ketiga yang menimbulkan kerugian finansial nyata dan kerusakan reputasi komersial bisnis.',
+    desc: 'Litigasi gugatan kompensasi atas tindakan melawan hukum yang menimbulkan kerugian komersial nyata, pencemaran reputasi usaha (*goodwill damage*), persaingan usaha tidak sehat, serta permohonan sita jaminan atas aset kebendaan lawan sengketa.',
     pasalDetails: [
-      'Gugatan Ganti Rugi Berdasarkan Unsur Pasal 1365 KUHPerdata',
-      'Tanggung Jawab Akibat Kelalaian Berdasarkan Pasal 1366 KUHPerdata',
-      'Pertanggungjawaban Majikan atas Karyawan (Pasal 1367 KUHPerdata)',
-      'Gugatan Sita Jaminan (Conservatoir Beslag - Pasal 227 HIR / 261 RBg)'
+      'Gugatan Pembuktian 5 Unsur PMH Melawan Hukum (Pasal 1365 KUHPerdata)',
+      'Tuntutan Pertanggungjawaban Akibat Kelalaian Fatal (Pasal 1366 KUHPerdata)',
+      'Tanggung Jawab Korporasi atas Perbuatan Karyawan (Pasal 1367 KUHPerdata)',
+      'Permohonan Sita Jaminan Aset Likuid & Properti (Conservatoir Beslag - HIR/RBg)'
     ],
     icon: ShieldCheck
   },
   {
     id: 'sengketa-agraria',
-    title: 'Sengketa Properti & Agraria Komersial',
-    subtitle: 'Real Estate & Agrarian Property Disputes',
-    legalAnchor: 'UU No. 5/1960 (UUPA), PP No. 18/2021, jo. UU PTUN',
-    desc: 'Perlindungan kepemilikan aset tanah industri, penyelesaian sertifikat ganda tumpang-tindih, gugatan pembatalan sertifikat di PTUN, dan eksekusi pengosongan lahan.',
+    title: 'Sengketa Pertanahan & Agraria Komersial',
+    subtitle: 'Real Estate, Agrarian Title & PTUN Litigation',
+    legalAnchor: 'UUPA No. 5/1960 jo. PP No. 18/2021 & Peratun No. 2/2019',
+    desc: 'Advokasi perlindungan aset tanah industri dan properti komersial berdasarkan regulasi pertanahan modern (PP No. 18/2021), penyelesaian tumpang-tindih sertifikat Hak Milik/HGB, gugatan pembatalan sertifikat di PTUN, hingga eksekusi pengosongan fisik lahan.',
     pasalDetails: [
-      'Gugatan Hak Milik & HGB Komersial (Pasal 20 & 35 UUPA)',
-      'Gugatan Pembatalan Keputusan Tata Usaha Negara (Pasal 53 UU PTUN)',
-      'Sengketa Wanprestasi Perjanjian Pengikatan Jual Beli (PPJB Tanah)',
-      'Eksekusi Riil Pengosongan Lahan (Pasal 195 s/d 200 HIR)'
+      'Perlindungan Yuridis Hak Milik & HGB Korporasi (Pasal 20 & 35 UUPA No. 5/1960)',
+      'Gugatan Pembatalan Sertifikat Cacat Hukum Administrasi (Pasal 53 UU PTUN)',
+      'Penyelesaian Wanprestasi Perjanjian Pengikatan Jual Beli (PPJB Tanah Industri)',
+      'Eksekusi Pengosongan Lahan & Pembongkaran Bangunan Tanpa Hak (HIR/RBg)'
     ],
     icon: Landmark
   },
@@ -197,12 +197,12 @@ const civilCommercialServices = [
     title: 'Kepailitan, PKPU & Restrukturisasi Utang',
     subtitle: 'Commercial Insolvency & Debt Restructuring',
     legalAnchor: 'UU No. 37 Tahun 2004 tentang Kepailitan & PKPU',
-    desc: 'Representasi kreditur maupun debitur dalam permohonan PKPU di Pengadilan Niaga guna mencapai restrukturisasi perdamaian serta menghindari likuidasi kepailitan.',
+    desc: 'Representasi strategis debitur maupun kreditur dalam perkara Penundaan Kewajiban Pembayaran Utang (PKPU) di Pengadilan Niaga guna menyusun proposal perdamaian (homologasi) yang mengikat, menata kembali kewajiban utang komersial, serta mencegah likuidasi kepailitan.',
     pasalDetails: [
-      'Syarat Permohonan Pailit Berdasarkan Pasal 2 ayat (1) UU Kepailitan',
-      'Hak Mengajukan PKPU Berdasarkan Pasal 222 ayat (1) & (2) UU Kepailitan',
-      'Penyusunan Rencana Perdamaian & Homologasi (Pasal 265 UU No. 37/2004)',
-      'Pencocokan Piutang & Perlindungan Hak Separatis Pemegang Jaminan'
+      'Syarat Pembuktian Sederhana 2 Kreditur (Pasal 2 ayat 1 UU No. 37/2004)',
+      'Pengajuan Permohonan PKPU Debitur/Kreditur (Pasal 222 UU No. 37/2004)',
+      'Penyusunan Rencana Perdamaian & Homologasi Utang (Pasal 265 UU No. 37/2004)',
+      'Verifikasi Piutang Kurator & Proteksi Kreditur Separatis Pemegang Jaminan'
     ],
     icon: Scale
   }
@@ -215,7 +215,7 @@ const litigationStages = [
     title: 'Penyelidikan & Penyidikan',
     authority: 'Kepolisian / Kejaksaan / Penyidik Khusus',
     legalBasis: 'Pasal 1 angka 1 & 2 jo. Pasal 102 - 136 KUHAP',
-    desc: 'Pendampingan langsung saat Berita Acara Pemeriksaan (BAP) saksi maupun tersangka, pengawasan kepatuhan hukum acara, serta penyerahan legal opinion dan bukti kontra-materiil.',
+    desc: 'Pendampingan langsung saat Berita Acara Pemeriksaan (BAP) saksi maupun tersangka, pengawasan kepatuhan due process of law, serta penyerahan nota pembelaan hukum materiil dan bukti kontra-dokumen sejak panggilan pertama.',
     icon: Search
   },
   {
@@ -223,15 +223,15 @@ const litigationStages = [
     title: 'Tindakan Praperadilan',
     authority: 'Pengadilan Negeri (Hakim Tunggal)',
     legalBasis: 'Pasal 77 s/d 83 KUHAP jo. Putusan MK No. 21/2014',
-    desc: 'Langkah koreksi prosedural cepat apabila terjadi penetapan tersangka tanpa bukti permulaan yang cukup, penahanan sewenang-wenang, atau penyitaan barang bukti ilegal.',
+    desc: 'Langkah koreksi prosedural cepat atas penetapan tersangka tanpa minimal dua alat bukti sah, pembatalan penangkapan/penahanan sewenang-wenang, serta pengujian legalitas penyitaan barang bukti yang melanggar hukum acara.',
     icon: Shield
   },
   {
     step: 'Tahap III',
     title: 'Persidangan PN & Pengadilan Tinggi',
-    authority: 'Sidang Tingkat Pertama & Banding',
-    legalBasis: 'Pasal 152 s/d 182 KUHAP (Pemeriksaan Sidang)',
-    desc: 'Penyusunan Eksepsi (Keberatan Dakwaan), pemeriksaan silang saksi & ahli (Cross-Examination), pengajuan bukti tandingan, hingga penyusunan Pledoi (Nota Pembelaan).',
+    authority: 'Sidang Peradilan Tingkat Pertama & Banding',
+    legalBasis: 'Pasal 152 s/d 182 KUHAP (Pemeriksaan Sidang Peradilan)',
+    desc: 'Penyusunan Eksepsi (Keberatan Surat Dakwaan), pemeriksaan silang saksi dan ahli forensik (Cross-Examination), pengajuan alat bukti tandingan, hingga penyusunan Pledoi (Nota Pembelaan) di hadapan Majelis Hakim.',
     icon: Gavel
   },
   {
@@ -239,7 +239,7 @@ const litigationStages = [
     title: 'Upaya Hukum Luar Biasa',
     authority: 'Mahkamah Agung Republik Indonesia',
     legalBasis: 'Pasal 244 - 258 (Kasasi) & Pasal 263 - 269 KUHAP (PK)',
-    desc: 'Pemeriksaan penerapan hukum di tingkat Kasasi serta pengajuan Peninjauan Kembali (PK) berlandaskan penemuan bukti baru (Novum) atau kekhilafan nyata hakim.',
+    desc: 'Uji penerapan hukum di tingkat Kasasi serta pengajuan Peninjauan Kembali (PK) berlandaskan penemuan bukti baru yang menentukan (Novum) atau pertimbangan kekhilafan nyata hakim demi keadilan substantif.',
     icon: Scale
   }
 ];
@@ -266,7 +266,7 @@ export default function PracticeAreasPage() {
   return (
     <div className="selection:bg-[#C5A880] selection:text-[#0F1E36] bg-[#F8F6F0] text-[#0F1E36] font-sans overflow-hidden">
       
-      {/* 1. HERO SECTION: PENETAPAN REPUTASI & POSITIONING LITIGASI */}
+      {/* 1. HERO SECTION: PENETAPAN REPUTASI & POSITIONING DENGAN REGULASI TERKINI */}
       <section className="relative min-h-[75vh] flex items-center justify-center bg-[#0F1E36] overflow-hidden pt-36 pb-24 border-b border-[#C5A880]/20">
         
         {/* Dekorasi Latar & Radial Glow */}
@@ -298,7 +298,7 @@ export default function PracticeAreasPage() {
             </motion.h1>
 
             <motion.p variants={itemVariants} className="text-[#F8F6F0]/85 text-base md:text-lg font-normal mb-10 leading-relaxed max-w-3xl mx-auto">
-              Bhadrika Byakta Law Firm mengintegrasikan penguasaan norma <strong>KUHP Baru (UU No. 1 Tahun 2023)</strong> dan KUHAP dalam pembelaan perkara pidana, bersinergi dengan penanganan sengketa perdata bernilai tinggi guna mengamankan hak konstitusional dan kelangsungan komersial klien.
+              Bhadrika Byakta Law Firm mengintegrasikan paradigma kodifikasi hukum pidana nasional modern berdasarkan <strong>UU No. 1 Tahun 2023 (KUHP Baru)</strong>, kepatuhan hukum acara KUHAP, regulasi delik siber <strong>UU No. 1 Tahun 2024 (Revisi Kedua UU ITE)</strong>, dan penegakan hukum sektor keuangan <strong>UU No. 4 Tahun 2023 (P2SK)</strong>, bersinergi dengan penanganan sengketa perdata bernilai tinggi guna mengamankan hak konstitusional dan kelangsungan komersial klien.
             </motion.p>
 
             <motion.div variants={itemVariants} className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -320,7 +320,7 @@ export default function PracticeAreasPage() {
         </div>
       </section>
 
-      {/* 2. CORE FOCUS: HUKUM LITIGASI PIDANA (SPESIFIK DENGAN PASAL KUHP BARU UU NO. 1/2023) */}
+      {/* 2. CORE FOCUS: HUKUM LITIGASI PIDANA (DESKRIPSI BERBASIS KUHP BARU UU NO. 1/2023) */}
       <section id="pidana" className="py-24 bg-[#0F1E36] text-[#F8F6F0] relative overflow-hidden border-b border-[#C5A880]/20">
         <div className="container mx-auto px-6 md:px-12 relative z-10">
           
@@ -339,7 +339,7 @@ export default function PracticeAreasPage() {
             </div>
             
             <div className="hidden lg:flex items-center gap-2 text-xs text-[#C5A880] font-mono bg-[#142847]/80 px-4 py-2.5 rounded-xl border border-[#C5A880]/20">
-              <BadgeCheck size={16} /> UU NO. 1/2023 (KUHP BARU) READY
+              <BadgeCheck size={16} /> UU NO. 1/2023 (KUHP BARU) COMPLIANT
             </div>
           </div>
 
@@ -379,7 +379,7 @@ export default function PracticeAreasPage() {
                     {/* Badge Rujukan Regulasi */}
                     <div className="mb-5 inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-[#0F1E36] border border-[#C5A880]/20 text-[11px] font-mono text-[#C5A880]">
                       <BookOpenCheck size={13} />
-                      <span>Dasar Hukum: {service.kuhpAnchor}</span>
+                      <span>Dasar Regulasi: {service.kuhpAnchor}</span>
                     </div>
                     
                     <p className="text-[#F8F6F0]/80 text-xs sm:text-sm leading-relaxed font-normal mb-6">
@@ -429,7 +429,7 @@ export default function PracticeAreasPage() {
         </div>
       </section>
 
-      {/* 3. COMPLEMENTARY DISPUTES: SENGKETA PERDATA & KOMERSIAL (DENGAN DASAR HUKUM) */}
+      {/* 3. COMPLEMENTARY DISPUTES: SENGKETA PERDATA & KOMERSIAL (DESKRIPSI REGULASI TERBARU) */}
       <section id="perdata" className="py-24 bg-[#F8F6F0] border-b border-[#0F1E36]/10">
         <div className="container mx-auto px-6 md:px-12">
           
@@ -442,7 +442,7 @@ export default function PracticeAreasPage() {
                 Sengketa Perdata, Komersial, & Agraria
               </h2>
               <p className="text-[#0F1E36]/75 text-sm font-normal mt-2 max-w-2xl">
-                Menyediakan proteksi dan pemulihan hak kebendaan, penagihan kerugian kontraktual, serta kepailitan melalui Pengadilan Negeri dan Pengadilan Niaga.
+                Menyediakan proteksi dan pemulihan hak kebendaan, penagihan kerugian kontraktual, serta kepailitan melalui Pengadilan Negeri dan Pengadilan Niaga dengan dukungan sistem peradilan modern (E-Court / E-Litigation).
               </p>
             </div>
             
@@ -522,7 +522,7 @@ export default function PracticeAreasPage() {
               Tahapan Litigasi & Pendampingan Berperkara
             </h2>
             <p className="text-[#F8F6F0]/75 text-sm mt-3 font-normal">
-              Setiap perkara dikawal secara bertahap dengan kecermatan yuridis berdasarkan Hukum Acara Pidana (KUHAP) dan Hukum Acara Perdata (HIR/RBg).
+              Setiap perkara dikawal secara bertahap dengan kecermatan yuridis berdasarkan Hukum Acara Pidana (KUHAP) dan Hukum Acara Perdata (HIR/RBg/E-Court MA).
             </p>
           </div>
 
@@ -595,7 +595,7 @@ export default function PracticeAreasPage() {
 
             <div className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#F8F6F0] border border-[#0F1E36]/10 text-xs text-[#0F1E36]/75">
               <BadgeCheck size={16} className="text-[#C5A880] shrink-0" />
-              <span>Sesuai kode etik profesi, kami tidak pernah menjanjikan hasil atau garansi putusan bebas murni, melainkan mengedepankan pembuktian materiil dan pembelaan hukum maksimal.</span>
+              <span>Sesuai kode etik profesi, kami tidak pernah menjanjikan hasil atau garansi putusan bebas murni, melainkan mengedepankan pembuktian materiil objektif dan pembelaan hukum maksimal.</span>
             </div>
 
           </div>
