@@ -3,27 +3,27 @@
 import { useState } from 'react';
 import { motion, AnimatePresence, Variants } from 'framer-motion';
 import Link from 'next/link';
-import { 
-  ArrowRight, 
-  ShieldCheck, 
-  Briefcase, 
-  Award, 
-  Building2, 
-  Gavel, 
-  Scale, 
-  Users, 
-  ChevronDown, 
-  Star, 
-  HelpCircle, 
-  PhoneCall, 
-  Lock, 
-  FileText, 
-  Clock, 
-  Compass, 
-  BadgeCheck, 
-  ChevronRight, 
-  Quote, 
-  Phone, 
+import {
+  ArrowRight,
+  ShieldCheck,
+  Briefcase,
+  Award,
+  Building2,
+  Gavel,
+  Scale,
+  Users,
+  ChevronDown,
+  Star,
+  HelpCircle,
+  PhoneCall,
+  Lock,
+  FileText,
+  Clock,
+  Compass,
+  BadgeCheck,
+  ChevronRight,
+  Quote,
+  Phone,
   MessageSquare,
   Landmark,
   UserCheck,
@@ -282,10 +282,10 @@ const containerVariants: Variants = {
 
 const itemVariants: Variants = {
   hidden: { opacity: 0, y: 20 },
-  visible: { 
-    opacity: 1, 
-    y: 0, 
-    transition: { type: 'spring', stiffness: 70, damping: 16 } 
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { type: 'spring', stiffness: 70, damping: 16 }
   }
 };
 
@@ -303,16 +303,16 @@ export default function Home() {
     setOpenFaqIndex(openFaqIndex === index ? null : index);
   };
 
-  const filteredFaqs = faqData.filter(faq => 
+  const filteredFaqs = faqData.filter(faq =>
     activeFaqFilter === 'Semua' ? true : faq.category === activeFaqFilter
   );
 
   return (
     <div className="selection:bg-[#C5A880] selection:text-[#0F1E36] bg-[#F8F6F0] text-[#0F1E36] overflow-hidden font-sans">
-      
+
       {/* 1. HERO SECTION (NAVY BLUE #0F1E36, CHAMPAGNE GOLD #C5A880, & IVORY CONTRAST) */}
       <section className="relative min-h-screen flex items-center justify-center bg-[#0F1E36] overflow-hidden pt-36 pb-28 border-b border-[#C5A880]/20">
-        
+
         {/* Dekorasi Latar Lembut Berwibawa (Non-Cyber) */}
         <div className="absolute inset-0 z-0 pointer-events-none opacity-30">
           <div className="absolute -top-40 -right-32 w-[650px] h-[650px] bg-[#C5A880]/10 rounded-full blur-[140px]" />
@@ -322,9 +322,9 @@ export default function Home() {
 
         <div className="container relative z-10 mx-auto px-6 md:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
-            
+
             {/* Kolom Kiri: Teks Prestisius & Penegasan Spesialisasi */}
-            <motion.div 
+            <motion.div
               variants={containerVariants}
               initial="hidden"
               animate="visible"
@@ -336,7 +336,7 @@ export default function Home() {
                   Bhadrika Byakta Law Firm &bull; Advocates & Legal Counsel
                 </span>
               </motion.div>
-              
+
               <motion.h1 variants={itemVariants} className="font-serif text-4xl sm:text-5xl lg:text-6xl text-[#F8F6F0] font-bold mb-6 leading-[1.15]">
                 Advokasi Litigasi Tegas & <br />
                 <span className="text-[#C5A880] relative inline-block font-serif italic">
@@ -344,22 +344,22 @@ export default function Home() {
                   <span className="absolute -bottom-2 left-0 w-full h-[2px] bg-gradient-to-r from-[#C5A880] via-[#C5A880]/60 to-transparent" />
                 </span>
               </motion.h1>
-              
+
               <motion.p variants={itemVariants} className="text-[#F8F6F0]/85 text-base md:text-lg font-normal mb-10 leading-relaxed max-w-2xl">
                 Menitikberatkan keahlian utama pada pembelaan <strong>Litigasi Pidana Korporasi & Praperadilan</strong>, diperkuat keandalan dalam <strong>Sengketa Perdata & Komersial</strong> berisiko tinggi berdasarkan Kode Etik Advokat Indonesia dan KUHAP.
               </motion.p>
-              
+
               {/* Tombol Aksi Utama */}
               <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4">
-                <Link 
-                  href="/contact" 
+                <Link
+                  href="/contact"
                   className="group bg-[#C5A880] hover:bg-[#b8996e] text-[#0F1E36] font-bold px-8 py-4 rounded-xl transition-all shadow-lg shadow-black/20 flex items-center justify-center gap-3 border border-[#C5A880]"
                 >
-                  Jadwalkan Konsultasi Awal 
+                  Jadwalkan Konsultasi Awal
                   <ArrowRight size={18} className="group-hover:translate-x-1.5 transition-transform" />
                 </Link>
-                <a 
-                  href="#area-praktik" 
+                <a
+                  href="#area-praktik"
                   className="bg-[#142847]/90 hover:bg-[#142847] text-[#F8F6F0] font-medium px-8 py-4 rounded-xl transition-all border border-[#C5A880]/40 flex items-center justify-center hover:border-[#C5A880]"
                 >
                   Eksplorasi Bidang Praktik
@@ -384,14 +384,14 @@ export default function Home() {
             </motion.div>
 
             {/* Kolom Kanan: Executive Leadership & Chamber Profile Card */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, scale: 0.97 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.7, delay: 0.2 }}
               className="lg:col-span-5"
             >
               <div className="bg-[#142847] border-2 border-[#C5A880]/40 rounded-2xl shadow-2xl p-7 md:p-8 relative backdrop-blur-md">
-                
+
                 {/* Header Profil Kantor Hukum */}
                 <div className="flex items-center justify-between pb-5 mb-6 border-b border-[#C5A880]/20">
                   <div className="flex items-center gap-3">
@@ -417,13 +417,13 @@ export default function Home() {
                     <p className="text-xs text-[#F8F6F0]/90 leading-relaxed italic mb-4 relative z-10">
                       &ldquo;Di hadapan hukum peradilan, keunggulan advokasi tidak hanya ditentukan oleh keberanian berbicara, melainkan ketelitian dalam membedah alat bukti materiil dan ketegasan mengawal hukum acara tanpa kompromi.&rdquo;
                     </p>
-                    
+
                     <div className="flex items-center gap-3 pt-3 border-t border-[#C5A880]/15">
                       <div className="w-9 h-9 rounded-full bg-[#142847] border border-[#C5A880]/40 flex items-center justify-center text-[#C5A880] shrink-0 font-serif font-bold text-xs">
                         BB
                       </div>
                       <div>
-                        <h5 className="text-xs font-bold text-[#F8F6F0]">Dr. Bhadrika Daniswara, S.H., LL.M.</h5>
+                        <h5 className="text-xs font-bold text-[#F8F6F0]">MANTRI ADIETIA S.H.,C.PLO.</h5>
                         <p className="text-[10px] text-[#C5A880]">Managing Partner & Advokat Litigasi</p>
                       </div>
                     </div>
@@ -462,8 +462,8 @@ export default function Home() {
                   <span className="text-[11px] text-[#F8F6F0]/70 flex items-center gap-1.5">
                     <Lock size={12} className="text-[#C5A880]" /> Konsultasi Bersifat Rahasia
                   </span>
-                  <Link 
-                    href="/contact" 
+                  <Link
+                    href="/contact"
                     className="text-[11px] font-bold text-[#C5A880] hover:text-[#F8F6F0] inline-flex items-center gap-1 transition-colors"
                   >
                     Hubungi Tim Advokat <ChevronRight size={13} />
@@ -480,27 +480,27 @@ export default function Home() {
       {/* STATS BANNER PRESTISIUS (KAPASITAS & JAM TERBANG TANPA KLAIM KEMENANGAN) */}
       <section className="relative z-20 -mt-12 px-6 md:px-12 mb-14">
         <div className="container mx-auto">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 25 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="bg-[#0F1E36] rounded-2xl shadow-2xl p-8 grid grid-cols-1 md:grid-cols-3 gap-8 border-2 border-[#C5A880]/30"
           >
             {[
-              { 
-                icon: Briefcase, 
-                title: '500+', 
-                subtitle: 'Perkara Ditangani Secara Komprehensif' 
+              {
+                icon: Briefcase,
+                title: '500+',
+                subtitle: 'Perkara Ditangani Secara Komprehensif'
               },
-              { 
-                icon: Building2, 
-                title: '50+', 
-                subtitle: 'Klien Korporasi & Entitas Bisnis' 
+              {
+                icon: Building2,
+                title: '50+',
+                subtitle: 'Klien Korporasi & Entitas Bisnis'
               },
-              { 
-                icon: Award, 
-                title: '15+ Tahun', 
-                subtitle: 'Pengalaman Advokasi Kumulatif' 
+              {
+                icon: Award,
+                title: '15+ Tahun',
+                subtitle: 'Pengalaman Advokasi Kumulatif'
               },
             ].map((stat, idx) => (
               <div key={idx} className="flex items-center gap-5 p-2 group">
@@ -520,7 +520,7 @@ export default function Home() {
       {/* 2. DUAL-CHAMBER PRACTICE AREAS SECTION (KOMPLEKS, BERBOBOT PIDANA & PERDATA) */}
       <section id="area-praktik" className="py-24 bg-[#F8F6F0] border-b border-[#0F1E36]/10">
         <div className="container mx-auto px-6 md:px-12">
-          
+
           {/* Header Area Praktik */}
           <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-14 gap-6 border-b border-[#0F1E36]/10 pb-8">
             <div className="max-w-2xl">
@@ -539,32 +539,29 @@ export default function Home() {
             <div className="flex flex-wrap items-center gap-2 shrink-0">
               <button
                 onClick={() => setActivePracticeFilter('all')}
-                className={`px-4 py-2.5 rounded-xl text-xs font-bold transition-all border ${
-                  activePracticeFilter === 'all'
-                    ? 'bg-[#0F1E36] text-[#C5A880] border-[#C5A880] shadow-md'
-                    : 'bg-white text-[#0F1E36] border-[#0F1E36]/15 hover:border-[#C5A880]'
-                }`}
+                className={`px-4 py-2.5 rounded-xl text-xs font-bold transition-all border ${activePracticeFilter === 'all'
+                  ? 'bg-[#0F1E36] text-[#C5A880] border-[#C5A880] shadow-md'
+                  : 'bg-white text-[#0F1E36] border-[#0F1E36]/15 hover:border-[#C5A880]'
+                  }`}
               >
                 Seluruh Bidang ({practiceAreasData.length})
               </button>
               <button
                 onClick={() => setActivePracticeFilter('criminal')}
-                className={`px-4 py-2.5 rounded-xl text-xs font-bold transition-all border flex items-center gap-1.5 ${
-                  activePracticeFilter === 'criminal'
-                    ? 'bg-[#0F1E36] text-[#C5A880] border-[#C5A880] shadow-md'
-                    : 'bg-white text-[#0F1E36] border-[#0F1E36]/15 hover:border-[#C5A880]'
-                }`}
+                className={`px-4 py-2.5 rounded-xl text-xs font-bold transition-all border flex items-center gap-1.5 ${activePracticeFilter === 'criminal'
+                  ? 'bg-[#0F1E36] text-[#C5A880] border-[#C5A880] shadow-md'
+                  : 'bg-white text-[#0F1E36] border-[#0F1E36]/15 hover:border-[#C5A880]'
+                  }`}
               >
                 <Gavel size={14} className="text-[#C5A880]" />
                 Fokus Utama: Pidana (4)
               </button>
               <button
                 onClick={() => setActivePracticeFilter('civil')}
-                className={`px-4 py-2.5 rounded-xl text-xs font-bold transition-all border flex items-center gap-1.5 ${
-                  activePracticeFilter === 'civil'
-                    ? 'bg-[#0F1E36] text-[#C5A880] border-[#C5A880] shadow-md'
-                    : 'bg-white text-[#0F1E36] border-[#0F1E36]/15 hover:border-[#C5A880]'
-                }`}
+                className={`px-4 py-2.5 rounded-xl text-xs font-bold transition-all border flex items-center gap-1.5 ${activePracticeFilter === 'civil'
+                  ? 'bg-[#0F1E36] text-[#C5A880] border-[#C5A880] shadow-md'
+                  : 'bg-white text-[#0F1E36] border-[#0F1E36]/15 hover:border-[#C5A880]'
+                  }`}
               >
                 <Scale size={14} className="text-[#C5A880]" />
                 Fokus Pendukung: Perdata (4)
@@ -600,7 +597,7 @@ export default function Home() {
           </div>
 
           {/* Grid Kartu Area Praktik Kompleks */}
-          <motion.div 
+          <motion.div
             layout
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 mb-16"
           >
@@ -617,11 +614,10 @@ export default function Home() {
                     exit={{ opacity: 0, scale: 0.97 }}
                     transition={{ duration: 0.3 }}
                     key={area.id}
-                    className={`rounded-3xl p-8 transition-all flex flex-col justify-between relative overflow-hidden group border-2 ${
-                      isCriminal
-                        ? 'bg-[#0F1E36] text-[#F8F6F0] border-[#C5A880]/50 shadow-2xl hover:border-[#C5A880]'
-                        : 'bg-white text-[#0F1E36] border-[#0F1E36]/15 hover:border-[#C5A880] shadow-md hover:shadow-xl'
-                    }`}
+                    className={`rounded-3xl p-8 transition-all flex flex-col justify-between relative overflow-hidden group border-2 ${isCriminal
+                      ? 'bg-[#0F1E36] text-[#F8F6F0] border-[#C5A880]/50 shadow-2xl hover:border-[#C5A880]'
+                      : 'bg-white text-[#0F1E36] border-[#0F1E36]/15 hover:border-[#C5A880] shadow-md hover:shadow-xl'
+                      }`}
                   >
                     {/* Watermark Ornamen Sudut */}
                     <div className="absolute top-0 right-0 w-36 h-36 bg-[#C5A880]/5 rounded-bl-full pointer-events-none group-hover:scale-110 transition-transform" />
@@ -630,23 +626,20 @@ export default function Home() {
                       {/* Baris Kategori & Landasan Hukum */}
                       <div className="flex flex-wrap items-center justify-between gap-3 mb-6">
                         <div className="flex items-center gap-2">
-                          <span className={`text-[10px] font-mono uppercase tracking-wider font-bold px-2.5 py-1 rounded-md border ${
-                            isCriminal
-                              ? 'bg-[#142847] text-[#C5A880] border-[#C5A880]/30'
-                              : 'bg-[#F8F6F0] text-[#0F1E36] border-[#0F1E36]/15'
-                          }`}>
+                          <span className={`text-[10px] font-mono uppercase tracking-wider font-bold px-2.5 py-1 rounded-md border ${isCriminal
+                            ? 'bg-[#142847] text-[#C5A880] border-[#C5A880]/30'
+                            : 'bg-[#F8F6F0] text-[#0F1E36] border-[#0F1E36]/15'
+                            }`}>
                             {area.chamber}
                           </span>
-                          <span className={`text-[10px] font-mono px-2 py-1 rounded ${
-                            isCriminal ? 'text-[#F8F6F0]/60 bg-[#0A1424]' : 'text-[#0F1E36]/60 bg-[#F8F6F0]'
-                          }`}>
+                          <span className={`text-[10px] font-mono px-2 py-1 rounded ${isCriminal ? 'text-[#F8F6F0]/60 bg-[#0A1424]' : 'text-[#0F1E36]/60 bg-[#F8F6F0]'
+                            }`}>
                             {area.badge}
                           </span>
                         </div>
 
-                        <span className={`text-[11px] font-mono font-medium flex items-center gap-1 ${
-                          isCriminal ? 'text-[#C5A880]' : 'text-[#0F1E36]/70'
-                        }`}>
+                        <span className={`text-[11px] font-mono font-medium flex items-center gap-1 ${isCriminal ? 'text-[#C5A880]' : 'text-[#0F1E36]/70'
+                          }`}>
                           <BookOpenCheck size={13} />
                           {area.legalAnchor}
                         </span>
@@ -654,41 +647,35 @@ export default function Home() {
 
                       {/* Header Kartu: Ikon & Judul */}
                       <div className="flex items-start gap-4 mb-4">
-                        <div className={`w-14 h-14 rounded-2xl flex items-center justify-center shrink-0 border transition-all ${
-                          isCriminal
-                            ? 'bg-[#142847] text-[#C5A880] border-[#C5A880]/40 group-hover:bg-[#C5A880] group-hover:text-[#0F1E36]'
-                            : 'bg-[#0F1E36] text-[#C5A880] border-[#C5A880]/30 group-hover:bg-[#C5A880] group-hover:text-[#0F1E36]'
-                        }`}>
+                        <div className={`w-14 h-14 rounded-2xl flex items-center justify-center shrink-0 border transition-all ${isCriminal
+                          ? 'bg-[#142847] text-[#C5A880] border-[#C5A880]/40 group-hover:bg-[#C5A880] group-hover:text-[#0F1E36]'
+                          : 'bg-[#0F1E36] text-[#C5A880] border-[#C5A880]/30 group-hover:bg-[#C5A880] group-hover:text-[#0F1E36]'
+                          }`}>
                           <Icon size={26} />
                         </div>
                         <div>
-                          <span className={`text-[11px] font-mono tracking-wider uppercase block font-semibold ${
-                            isCriminal ? 'text-[#C5A880]' : 'text-[#0F1E36]/60'
-                          }`}>
+                          <span className={`text-[11px] font-mono tracking-wider uppercase block font-semibold ${isCriminal ? 'text-[#C5A880]' : 'text-[#0F1E36]/60'
+                            }`}>
                             {area.englishTitle}
                           </span>
-                          <h3 className={`font-serif text-2xl font-bold mt-0.5 leading-snug ${
-                            isCriminal ? 'text-[#F8F6F0]' : 'text-[#0F1E36]'
-                          }`}>
+                          <h3 className={`font-serif text-2xl font-bold mt-0.5 leading-snug ${isCriminal ? 'text-[#F8F6F0]' : 'text-[#0F1E36]'
+                            }`}>
                             {area.title}
                           </h3>
                         </div>
                       </div>
 
                       {/* Deskripsi Yuridis */}
-                      <p className={`text-xs sm:text-sm leading-relaxed mb-6 font-normal ${
-                        isCriminal ? 'text-[#F8F6F0]/80' : 'text-[#0F1E36]/75'
-                      }`}>
+                      <p className={`text-xs sm:text-sm leading-relaxed mb-6 font-normal ${isCriminal ? 'text-[#F8F6F0]/80' : 'text-[#0F1E36]/75'
+                        }`}>
                         {area.desc}
                       </p>
 
                       {/* Cakupan Sub-Perkara & Delik Materiil */}
-                      <div className={`space-y-2.5 pt-5 pb-6 border-t ${
-                        isCriminal ? 'border-[#C5A880]/20' : 'border-[#0F1E36]/10'
-                      }`}>
-                        <span className={`text-[10px] font-mono uppercase tracking-wider block font-bold ${
-                          isCriminal ? 'text-[#C5A880]' : 'text-[#0F1E36]/70'
+                      <div className={`space-y-2.5 pt-5 pb-6 border-t ${isCriminal ? 'border-[#C5A880]/20' : 'border-[#0F1E36]/10'
                         }`}>
+                        <span className={`text-[10px] font-mono uppercase tracking-wider block font-bold ${isCriminal ? 'text-[#C5A880]' : 'text-[#0F1E36]/70'
+                          }`}>
                           Ruang Lingkup Penanganan Perkara:
                         </span>
                         {area.subScopes.map((scope, sIdx) => (
@@ -706,19 +693,17 @@ export default function Home() {
                     <div className="pt-4 flex items-center justify-between border-t border-inherit">
                       <Link
                         href="/contact"
-                        className={`text-xs font-bold uppercase tracking-wider inline-flex items-center gap-2 transition-all ${
-                          isCriminal
-                            ? 'text-[#C5A880] hover:text-[#F8F6F0]'
-                            : 'text-[#0F1E36] hover:text-[#C5A880]'
-                        }`}
+                        className={`text-xs font-bold uppercase tracking-wider inline-flex items-center gap-2 transition-all ${isCriminal
+                          ? 'text-[#C5A880] hover:text-[#F8F6F0]'
+                          : 'text-[#0F1E36] hover:text-[#C5A880]'
+                          }`}
                       >
                         <span>Konsultasi Perkara Ini</span>
                         <ChevronRight size={15} className="group-hover:translate-x-1 transition-transform" />
                       </Link>
 
-                      <span className={`text-[11px] font-mono ${
-                        isCriminal ? 'text-[#F8F6F0]/50' : 'text-[#0F1E36]/50'
-                      }`}>
+                      <span className={`text-[11px] font-mono ${isCriminal ? 'text-[#F8F6F0]/50' : 'text-[#0F1E36]/50'
+                        }`}>
                         BBLF-LITIGATION
                       </span>
                     </div>
@@ -731,8 +716,8 @@ export default function Home() {
 
           {/* Link Eksekutif ke Halaman Seluruh Layanan */}
           <div className="text-center pt-2">
-            <Link 
-              href="/practice-areas" 
+            <Link
+              href="/practice-areas"
               className="inline-flex items-center gap-3 bg-[#0F1E36] hover:bg-[#142847] text-[#C5A880] font-bold px-8 py-4 rounded-xl transition-all shadow-xl text-xs uppercase tracking-wider border border-[#C5A880]/40 group"
             >
               <span>Pelajari Rincian Lengkap Seluruh Layanan & Perkara</span>
@@ -746,7 +731,7 @@ export default function Home() {
       {/* 3. METODOLOGI PENANGANAN PERKARA (4 TAHAP PROTOKOL RESMI) */}
       <section className="py-24 bg-[#0F1E36] text-[#F8F6F0] relative overflow-hidden">
         <div className="container mx-auto px-6 md:px-12 relative z-10">
-          
+
           <div className="text-center max-w-2xl mx-auto mb-16">
             <span className="text-[#C5A880] font-bold tracking-widest uppercase text-xs px-3.5 py-1.5 bg-[#142847] border border-[#C5A880]/30 rounded-full inline-block">
               Alur Kerja Standar Operasional
@@ -759,7 +744,7 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {methodologies.map((m, idx) => (
-              <div 
+              <div
                 key={idx}
                 className="bg-[#142847]/70 border border-[#C5A880]/20 rounded-2xl p-6 relative hover:border-[#C5A880] transition-colors group flex flex-col justify-between"
               >
@@ -773,7 +758,7 @@ export default function Home() {
                   <h4 className="font-serif text-lg font-bold text-[#F8F6F0] mb-2">{m.title}</h4>
                   <p className="text-xs text-[#F8F6F0]/70 leading-relaxed font-normal">{m.desc}</p>
                 </div>
-                
+
                 <div className="w-full h-1 bg-[#0F1E36] rounded-full mt-6 overflow-hidden">
                   <div className="w-1/3 h-full bg-[#C5A880] group-hover:w-full transition-all duration-500" />
                 </div>
@@ -787,7 +772,7 @@ export default function Home() {
       {/* 4. INTERACTIVE FAQ ACCORDION SECTION (FILTERABLE & BERBOBOT YURIDIS) */}
       <section className="py-24 bg-[#F8F6F0] border-t border-[#0F1E36]/10">
         <div className="container mx-auto px-6 md:px-12 max-w-4xl">
-          
+
           <div className="text-center mb-12">
             <span className="text-[#0F1E36] font-bold tracking-widest uppercase text-xs px-3.5 py-1.5 bg-[#C5A880]/20 border border-[#C5A880]/40 rounded-full inline-flex items-center gap-1.5">
               <HelpCircle size={14} className="text-[#0F1E36]" /> Tanya Jawab & Regulasi
@@ -802,11 +787,10 @@ export default function Home() {
               <button
                 key={cat}
                 onClick={() => setActiveFaqFilter(cat)}
-                className={`px-4 py-2 text-xs font-semibold rounded-lg transition-all ${
-                  activeFaqFilter === cat 
-                    ? 'bg-[#0F1E36] text-[#C5A880] shadow' 
-                    : 'bg-white text-[#0F1E36] border border-[#0F1E36]/15 hover:border-[#C5A880]'
-                }`}
+                className={`px-4 py-2 text-xs font-semibold rounded-lg transition-all ${activeFaqFilter === cat
+                  ? 'bg-[#0F1E36] text-[#C5A880] shadow'
+                  : 'bg-white text-[#0F1E36] border border-[#0F1E36]/15 hover:border-[#C5A880]'
+                  }`}
               >
                 {cat}
               </button>
@@ -818,7 +802,7 @@ export default function Home() {
             {filteredFaqs.map((faq, index) => {
               const isOpen = openFaqIndex === index;
               return (
-                <div 
+                <div
                   key={index}
                   className="bg-white rounded-xl border border-[#0F1E36]/10 hover:border-[#C5A880]/60 shadow-sm overflow-hidden transition-all"
                 >
@@ -856,7 +840,7 @@ export default function Home() {
       {/* 5. CLIENT TESTIMONIALS SECTION (FORMAT EKSEKUTIF & RELEVANSI INDUSTRI) */}
       <section className="py-24 bg-white border-t border-[#0F1E36]/10">
         <div className="container mx-auto px-6 md:px-12">
-          
+
           <div className="text-center max-w-2xl mx-auto mb-16">
             <span className="text-[#0F1E36] font-bold tracking-widest uppercase text-xs px-3.5 py-1.5 bg-[#C5A880]/20 border border-[#C5A880]/40 rounded-full">
               Reputasi & Hubungan Klien
@@ -866,8 +850,8 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {testimonials.map((item, idx) => (
-              <div 
-                key={idx} 
+              <div
+                key={idx}
                 className="bg-[#F8F6F0] p-8 rounded-2xl border border-[#0F1E36]/10 hover:border-[#C5A880] transition-colors flex flex-col justify-between shadow-sm"
               >
                 <div>
@@ -881,7 +865,7 @@ export default function Home() {
                       {item.tag}
                     </span>
                   </div>
-                  
+
                   <p className="text-[#0F1E36] text-sm font-normal leading-relaxed italic mb-8">
                     &ldquo;{item.text}&rdquo;
                   </p>
@@ -902,7 +886,7 @@ export default function Home() {
       {/* 6. EMERGENCY CONTACT CALLOUT (DIRECT CALL & WHATSAPP HOTLINE 24/7) */}
       <section className="py-16 bg-[#0F1E36] text-[#F8F6F0] relative overflow-hidden border-t border-[#C5A880]/30">
         <div className="absolute top-0 right-0 w-96 h-96 bg-[#C5A880]/10 rounded-full blur-[110px] pointer-events-none" />
-        
+
         <div className="container mx-auto px-6 md:px-12 relative z-10 flex flex-col lg:flex-row items-center justify-between gap-8 text-center lg:text-left">
           <div className="flex flex-col sm:flex-row items-center gap-5">
             <div className="w-16 h-16 rounded-2xl bg-[#142847] border-2 border-[#C5A880]/40 text-[#C5A880] flex items-center justify-center shrink-0 shadow-lg">
@@ -915,16 +899,16 @@ export default function Home() {
               </p>
             </div>
           </div>
-          
+
           {/* Tombol Direct Call & Direct WhatsApp */}
           <div className="flex flex-col sm:flex-row items-center gap-3 shrink-0 w-full sm:w-auto">
-            <a 
+            <a
               href="tel:+6285697259015"
               className="w-full sm:w-auto bg-[#C5A880] hover:bg-[#b8996e] text-[#0F1E36] font-bold px-7 py-3.5 rounded-xl transition-all shadow-xl flex items-center justify-center gap-2 border border-[#C5A880] text-sm"
             >
               <Phone size={17} /> Panggil Hotline (+62 856-9725-9015)
             </a>
-            <a 
+            <a
               href="https://wa.me/6285697259015?text=Halo%20BBLF,%20saya%20membutuhkan%20pendampingan%20hukum%20darurat."
               target="_blank"
               rel="noopener noreferrer"
