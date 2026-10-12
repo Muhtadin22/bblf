@@ -260,7 +260,7 @@ export default function AboutPage() {
                     BB
                   </div>
                   <div>
-                    <h4 className="font-bold text-[#F8F6F0] text-sm">Bhadrika Daniswara, S.H., LL.M.</h4>
+                    <h4 className="font-bold text-[#F8F6F0] text-sm">MANTRI ADIETIA S.H.C.PLO.</h4>
                     <p className="text-xs text-[#C5A880]">Managing Partner & Advokat Senior</p>
                     <p className="text-[10px] text-[#F8F6F0]/60 mt-0.5">Lisensi  / Kurator & Pengurus Terdaftar</p>
                   </div>

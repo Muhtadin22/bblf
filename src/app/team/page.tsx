@@ -79,13 +79,13 @@ const teamMembers = [
   },
   {
     id: 4,
-    category: 'SUWARNO, CLA.',
-    name: 'Dewi Lestari Daniswara, S.H., LL.M.',
+    category: 'PARALEGAL.',
+    name: 'SUWARNO. CLA.',
     role: 'Paralegal',
     practiceLead: 'Bantusan Operasional ',
     description: 'Fokus pada restrukturisasi utang (Kepailitan & PKPU), uji kepatuhan regulasi korporasi (Legal Due Diligence), perancangan perjanjian joint venture, dan mitigasi risiko pidana korporasi internal.',
     competencies: ['Restrukturisasi PKPU & Pailit', 'Due Diligence Transaksi', 'Kepatuhan Regulasi Bisnis', 'Mitigasi Risiko Direksi'],
-    image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=800&q=80',
     tier: ' Paralegal',
     status: 'Paralegalo Bersertifikasi'
   }
