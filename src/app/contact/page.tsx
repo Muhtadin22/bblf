@@ -20,7 +20,9 @@ import {
   Users,
   Compass,
   FileText,
-  PhoneCall
+  PhoneCall,
+  ArrowRight,
+  ExternalLink
 } from 'lucide-react';
 
 // --- DATA: KLASIFIKASI POKOK PERKARA ---
@@ -73,6 +75,7 @@ export default function ContactPage() {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submittedWhatsappUrl, setSubmittedWhatsappUrl] = useState('');
 
   const [formData, setFormData] = useState({
     name: '',
@@ -89,32 +92,47 @@ export default function ContactPage() {
     setIsSubmitting(true);
 
     const waNumber = '6285697259015';
-    const chosenMethodLabel = consultationMethods.find(m => m.id === selectedMethod)?.label || 'Tatap Muka';
+    const chosenMethodLabel = consultationMethods.find(m => m.id === selectedMethod)?.label || 'Tatap Muka di Kantor Firma';
 
-    const messageText = `*FORMULIR PENJADWALAN KONSULTASI // BHADRIKA BYAKTA LAW FIRM*%0A` +
-      `--------------------------------------------------%0A` +
-      `*1. IDENTITAS KLIEN*%0A` +
-      `* Nama Lengkap: ${encodeURIComponent(formData.name)}%0A` +
-      `* Instansi / Korporasi: ${encodeURIComponent(formData.company || '-')}%0A` +
-      `* Email Resmi: ${encodeURIComponent(formData.email)}%0A` +
-      `* Telepon / WA: ${encodeURIComponent(formData.phone)}%0A%0A` +
-      `*2. DETAIL PERKARA & JADWAL*%0A` +
-      `* Pokok Perkara: ${encodeURIComponent(selectedTopic)}%0A` +
-      `* Format Pertemuan: ${encodeURIComponent(chosenMethodLabel)}%0A` +
-      `* Tanggal Diinginkan: ${encodeURIComponent(preferredDate || 'Segera / Konfirmasi Admin')}%0A` +
-      `* Alokasi Waktu: ${encodeURIComponent(selectedSlot)}%0A%0A` +
-      `*3. RINGKASAN PERMASALAHAN*%0A` +
-      `${encodeURIComponent(formData.message)}%0A` +
-      `--------------------------------------------------%0A` +
-      `_Status: Terkirim via Enkripsi Portal Resmi BBLF_`;
+    // Rangkai seluruh teks dalam format string murni dengan karakter baris baru (\n)
+    const rawMessage = [
+      '*FORMULIR PENJADWALAN KONSULTASI // BHADRIKA BYAKTA LAW FIRM*',
+      '--------------------------------------------------',
+      '*1. IDENTITAS KLIEN*',
+      `• Nama Lengkap: ${formData.name.trim() || '-'}`,
+      `• Instansi / Korporasi: ${formData.company.trim() || '-'}`,
+      `• Email Resmi: ${formData.email.trim() || '-'}`,
+      `• No. Telepon / WhatsApp: ${formData.phone.trim() || '-'}`,
+      '',
+      '*2. DETAIL PERKARA & JADWAL*',
+      `• Topik / Bidang Hukum: ${selectedTopic}`,
+      `• Format Pertemuan: ${chosenMethodLabel}`,
+      `• Preferensi Tanggal: ${preferredDate || 'Segera / Konfirmasi Admin'}`,
+      `• Alokasi Sesi Waktu: ${selectedSlot}`,
+      '',
+      '*3. RINCIAN POKOK PERKARA*',
+      formData.message.trim() ? formData.message.trim() : '(Belum dicantumkan)',
+      '--------------------------------------------------',
+      '_Status: Dikirim melalui Portal Konsultasi Resmi BBLF_'
+    ].join('\n');
 
-    const whatsappUrl = `https://wa.me/${waNumber}?text=${messageText}`;
+    // Encode seluruh teks secara utuh agar karakter &, #, ?, enter, dan spasi tidak memotong isi pesan
+    const encodedMessage = encodeURIComponent(rawMessage);
+    const whatsappUrl = `https://api.whatsapp.com/send?phone=${waNumber}&text=${encodedMessage}`;
 
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSubmitted(true);
-      window.open(whatsappUrl, '_blank');
-    }, 1000);
+    setSubmittedWhatsappUrl(whatsappUrl);
+    setIsSubmitting(false);
+    setIsSubmitted(true);
+
+    // Buka WhatsApp, dengan fallback jika pop-up diblokir browser
+    try {
+      const win = window.open(whatsappUrl, '_blank');
+      if (!win || win.closed || typeof win.closed === 'undefined') {
+        window.location.href = whatsappUrl;
+      }
+    } catch {
+      window.location.href = whatsappUrl;
+    }
   };
 
   return (
@@ -288,26 +306,42 @@ export default function ContactPage() {
                     <motion.div 
                       initial={{ opacity: 0, scale: 0.95 }}
                       animate={{ opacity: 1, scale: 1 }}
-                      className="bg-[#0F1E36] text-[#F8F6F0] border-2 border-[#C5A880] rounded-2xl p-8 text-center py-16"
+                      className="bg-[#0F1E36] text-[#F8F6F0] border-2 border-[#C5A880] rounded-2xl p-8 text-center py-12"
                     >
                       <div className="w-16 h-16 bg-[#142847] border border-[#C5A880] text-[#C5A880] rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
                         <CheckCircle2 size={32} />
                       </div>
                       <h4 className="font-serif text-2xl font-bold text-[#F8F6F0] mb-2">
-                        Data Berhasil Disiapkan & Dialihkan!
+                        Data Berhasil Dirangkai & Terenkripsi!
                       </h4>
                       <p className="text-[#F8F6F0]/80 text-sm max-w-md mx-auto mb-6 leading-relaxed">
-                        Aplikasi WhatsApp Anda telah dibuka secara otomatis dengan format resume perkara menuju hotline admin resmi kami di <strong className="text-[#C5A880]">085697259015</strong>.
+                        Data identitas, jadwal, dan <strong>rincian pokok perkara</strong> telah di-encode secara utuh untuk dikirimkan langsung ke nomor admin resmi kami di <strong className="text-[#C5A880]">085697259015</strong>.
                       </p>
-                      <button 
-                        onClick={() => { 
-                          setIsSubmitted(false); 
-                          setFormData({ name: '', company: '', email: '', phone: '', message: '' }); 
-                        }}
-                        className="bg-[#C5A880] hover:bg-[#b8996e] text-[#0F1E36] font-bold px-6 py-3 rounded-xl text-xs uppercase tracking-wider transition-all shadow-md"
-                      >
-                        Ajukan Registrasi Perkara Lain
-                      </button>
+
+                      {/* Tombol Langsung Buka WhatsApp jika Popup Diblokir */}
+                      <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+                        {submittedWhatsappUrl && (
+                          <a 
+                            href={submittedWhatsappUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="w-full sm:w-auto bg-[#C5A880] hover:bg-[#b8996e] text-[#0F1E36] font-bold px-6 py-3.5 rounded-xl text-xs uppercase tracking-wider transition-all shadow-md inline-flex items-center justify-center gap-2"
+                          >
+                            <MessageSquare size={16} />
+                            <span>Buka WhatsApp Sekarang</span>
+                          </a>
+                        )}
+
+                        <button 
+                          onClick={() => { 
+                            setIsSubmitted(false); 
+                            setFormData({ name: '', company: '', email: '', phone: '', message: '' }); 
+                          }}
+                          className="w-full sm:w-auto bg-[#142847] hover:bg-[#1c365f] text-[#F8F6F0] font-semibold px-6 py-3.5 rounded-xl text-xs uppercase tracking-wider transition-all border border-[#C5A880]/30"
+                        >
+                          Ajukan Registrasi Perkara Lain
+                        </button>
+                      </div>
                     </motion.div>
                   ) : (
                     <form onSubmit={handleSubmit} className="space-y-6">
@@ -476,9 +510,10 @@ export default function ContactPage() {
                           </div>
                         </div>
 
+                        {/* Textarea Rincian Pokok Perkara */}
                         <div>
                           <label className="block text-xs font-mono font-bold text-[#0F1E36] uppercase tracking-wider mb-1.5">
-                            Ringkasan Duduk Perkara / Pokok Masalah *
+                            Rincian Pokok Perkara / Uraian Kasus *
                           </label>
                           <textarea 
                             rows={4} 
@@ -486,7 +521,7 @@ export default function ContactPage() {
                             value={formData.message}
                             onChange={(e) => setFormData({...formData, message: e.target.value})}
                             className="w-full px-4 py-3 rounded-xl border border-[#0F1E36]/15 focus:outline-none focus:border-[#C5A880] bg-[#F8F6F0] text-xs text-[#0F1E36] resize-none transition-colors" 
-                            placeholder="Sampaikan uraian singkat peristiwa hukum, dokumen yang relevan (misal: panggilan penyidik, somasi, atau kontrak wanprestasi), dan target hasil yang diharapkan..."
+                            placeholder="Sampaikan kronologi atau pokok permasalahan hukum yang Anda hadapi (misal: surat panggilan penyidik, wanprestasi kontrak komersial, sengketa tanah, dll)..."
                           />
                         </div>
                       </div>
