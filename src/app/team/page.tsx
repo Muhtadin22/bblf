@@ -3,14 +3,14 @@
 import { useState } from 'react';
 import { motion, AnimatePresence, Variants } from 'framer-motion';
 import Link from 'next/link';
-import { 
-  GraduationCap, 
-  Briefcase, 
-  ArrowRight, 
-  ShieldCheck, 
-  Scale, 
-  Gavel, 
-  Building2, 
+import {
+  GraduationCap,
+  Briefcase,
+  ArrowRight,
+  ShieldCheck,
+  Scale,
+  Gavel,
+  Building2,
   BadgeCheck,
   FileBadge,
   CheckCircle2,
@@ -79,9 +79,9 @@ const teamMembers = [
   },
   {
     id: 4,
-    category: 'corporate',
+    category: 'SUWARNO, CLA.',
     name: 'Dewi Lestari Daniswara, S.H., LL.M.',
-    role: 'Partner',
+    role: 'Paralegal',
     practiceLead: 'Kepala Tata Kelola Korporasi & Mitigasi Hukum',
     education: 'LL.M. in Commercial Law, University of Melbourne | S.H., Universitas Padjadjaran',
     experience: '13+ Tahun Hukum Pasar Modal & Restrukturisasi Usaha',
@@ -137,10 +137,10 @@ const containerVariants: Variants = {
 
 const itemVariants: Variants = {
   hidden: { opacity: 0, y: 22 },
-  visible: { 
-    opacity: 1, 
-    y: 0, 
-    transition: { type: 'spring', stiffness: 70, damping: 16 } 
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { type: 'spring', stiffness: 70, damping: 16 }
   }
 };
 
@@ -148,16 +148,16 @@ export default function TeamPage() {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [activeStructureTab, setActiveStructureTab] = useState(0);
 
-  const filteredTeam = selectedCategory === 'all' 
-    ? teamMembers 
+  const filteredTeam = selectedCategory === 'all'
+    ? teamMembers
     : teamMembers.filter(member => member.category === selectedCategory);
 
   return (
     <div className="selection:bg-[#C5A880] selection:text-[#0F1E36] bg-[#F8F6F0] text-[#0F1E36] font-sans overflow-hidden">
-      
+
       {/* 1. HERO SECTION: AUTORITAS & PRESTISE PARTNER */}
       <section className="relative min-h-[70vh] flex items-center justify-center bg-[#0F1E36] overflow-hidden pt-36 pb-24 border-b border-[#C5A880]/20">
-        
+
         {/* Latar Belakang Geometris & Radial Glow */}
         <div className="absolute inset-0 z-0 pointer-events-none opacity-30">
           <div className="absolute -top-36 -right-24 w-[600px] h-[600px] bg-[#C5A880]/10 rounded-full blur-[140px]" />
@@ -208,7 +208,7 @@ export default function TeamPage() {
       {/* 2. TATA KELOLA ORGANISASI & HIERARKI KANTOR HUKUM */}
       <section className="py-20 bg-[#F8F6F0] border-b border-[#0F1E36]/10">
         <div className="container mx-auto px-6 md:px-12">
-          
+
           <div className="text-center max-w-2xl mx-auto mb-14">
             <span className="text-[#0F1E36] font-bold tracking-widest uppercase text-xs px-3.5 py-1.5 bg-[#C5A880]/20 border border-[#C5A880]/40 rounded-full inline-block">
               Tata Kelola Organisasi
@@ -226,36 +226,32 @@ export default function TeamPage() {
               const Icon = item.icon;
               const isSelected = activeStructureTab === idx;
               return (
-                <div 
+                <div
                   key={idx}
                   onClick={() => setActiveStructureTab(idx)}
-                  className={`p-7 rounded-2xl border-2 transition-all cursor-pointer flex flex-col justify-between ${
-                    isSelected 
-                      ? 'bg-[#0F1E36] text-[#F8F6F0] border-[#C5A880] shadow-2xl scale-[1.02]' 
+                  className={`p-7 rounded-2xl border-2 transition-all cursor-pointer flex flex-col justify-between ${isSelected
+                      ? 'bg-[#0F1E36] text-[#F8F6F0] border-[#C5A880] shadow-2xl scale-[1.02]'
                       : 'bg-white text-[#0F1E36] border-[#0F1E36]/10 hover:border-[#C5A880]/60 shadow-sm'
-                  }`}
+                    }`}
                 >
                   <div>
                     <div className="flex items-center justify-between mb-5">
-                      <div className={`w-12 h-12 rounded-xl flex items-center justify-center border transition-colors ${
-                        isSelected 
-                          ? 'bg-[#142847] border-[#C5A880]/40 text-[#C5A880]' 
+                      <div className={`w-12 h-12 rounded-xl flex items-center justify-center border transition-colors ${isSelected
+                          ? 'bg-[#142847] border-[#C5A880]/40 text-[#C5A880]'
                           : 'bg-[#F8F6F0] border-[#0F1E36]/10 text-[#0F1E36]'
-                      }`}>
+                        }`}>
                         <Icon size={22} />
                       </div>
-                      <span className={`text-[11px] font-mono font-bold uppercase tracking-wider px-2.5 py-1 rounded border ${
-                        isSelected 
-                          ? 'bg-[#142847] border-[#C5A880]/30 text-[#C5A880]' 
+                      <span className={`text-[11px] font-mono font-bold uppercase tracking-wider px-2.5 py-1 rounded border ${isSelected
+                          ? 'bg-[#142847] border-[#C5A880]/30 text-[#C5A880]'
                           : 'bg-[#F8F6F0] border-[#0F1E36]/10 text-[#0F1E36]/60'
-                      }`}>
+                        }`}>
                         {item.tier}
                       </span>
                     </div>
 
-                    <span className={`text-[11px] font-mono tracking-wider uppercase block mb-1 font-semibold ${
-                      isSelected ? 'text-[#C5A880]' : 'text-[#0F1E36]/60'
-                    }`}>
+                    <span className={`text-[11px] font-mono tracking-wider uppercase block mb-1 font-semibold ${isSelected ? 'text-[#C5A880]' : 'text-[#0F1E36]/60'
+                      }`}>
                       {item.badge}
                     </span>
 
@@ -263,16 +259,14 @@ export default function TeamPage() {
                       {item.title}
                     </h4>
 
-                    <p className={`text-xs leading-relaxed font-normal ${
-                      isSelected ? 'text-[#F8F6F0]/80' : 'text-[#0F1E36]/75'
-                    }`}>
+                    <p className={`text-xs leading-relaxed font-normal ${isSelected ? 'text-[#F8F6F0]/80' : 'text-[#0F1E36]/75'
+                      }`}>
                       {item.desc}
                     </p>
                   </div>
 
-                  <div className={`mt-6 pt-4 border-t flex items-center justify-between text-xs font-mono ${
-                    isSelected ? 'border-[#C5A880]/20 text-[#C5A880]' : 'border-[#0F1E36]/10 text-[#0F1E36]/60'
-                  }`}>
+                  <div className={`mt-6 pt-4 border-t flex items-center justify-between text-xs font-mono ${isSelected ? 'border-[#C5A880]/20 text-[#C5A880]' : 'border-[#0F1E36]/10 text-[#0F1E36]/60'
+                    }`}>
                     <span>AUDIT MUTU</span>
                     <BadgeCheck size={15} />
                   </div>
@@ -287,7 +281,7 @@ export default function TeamPage() {
       {/* 3. DIREKTORI ADVOKAT & KARTU PROFIL EKSKLUSIF BERBORDER MEWAH */}
       <section className="py-24 bg-white border-b border-[#0F1E36]/10">
         <div className="container mx-auto px-6 md:px-12">
-          
+
           <div className="text-center max-w-2xl mx-auto mb-14">
             <span className="text-[#0F1E36] font-bold tracking-widest uppercase text-xs px-3.5 py-1.5 bg-[#C5A880]/20 border border-[#C5A880]/40 rounded-full inline-block">
               Direktori Counsel & Partner
@@ -308,11 +302,10 @@ export default function TeamPage() {
                 <button
                   key={cat.id}
                   onClick={() => setSelectedCategory(cat.id)}
-                  className={`px-5 py-2.5 rounded-xl text-xs md:text-sm font-semibold transition-all ${
-                    isActive 
-                      ? 'bg-[#0F1E36] text-[#C5A880] shadow-md border-2 border-[#C5A880] font-bold' 
+                  className={`px-5 py-2.5 rounded-xl text-xs md:text-sm font-semibold transition-all ${isActive
+                      ? 'bg-[#0F1E36] text-[#C5A880] shadow-md border-2 border-[#C5A880] font-bold'
                       : 'bg-[#F8F6F0] text-[#0F1E36] border border-[#0F1E36]/15 hover:border-[#C5A880]'
-                  }`}
+                    }`}
                 >
                   {cat.label}
                 </button>
@@ -321,7 +314,7 @@ export default function TeamPage() {
           </div>
 
           {/* Grid Profil Partner: Kartu Berborder Berlapis Mewah */}
-          <motion.div 
+          <motion.div
             layout
             className="grid grid-cols-1 lg:grid-cols-2 gap-10 max-w-6xl mx-auto"
           >
@@ -345,22 +338,22 @@ export default function TeamPage() {
 
                   {/* Kontainer Dalam Kartu */}
                   <div className="bg-white rounded-[22px] border border-[#C5A880]/20 p-7 md:p-8 flex flex-col justify-between h-full relative overflow-hidden">
-                    
+
                     <div>
                       {/* Baris Atas: Foto Paspartu & Header Kualifikasi */}
                       <div className="grid grid-cols-1 sm:grid-cols-12 gap-6 items-start mb-6">
-                        
+
                         {/* Bingkai Foto Portrait Beraksen Emas */}
                         <div className="sm:col-span-5 relative">
                           <div className="relative rounded-2xl p-1 bg-[#0F1E36] border-2 border-[#C5A880]/50 shadow-md overflow-hidden aspect-[3/4]">
                             {/* eslint-disable-next-line @next/next/no-img-element */}
-                            <img 
-                              src={member.image} 
-                              alt={member.name} 
-                              className="object-cover w-full h-full rounded-xl grayscale-[20%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500" 
+                            <img
+                              src={member.image}
+                              alt={member.name}
+                              className="object-cover w-full h-full rounded-xl grayscale-[20%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-[#0F1E36] via-transparent to-transparent opacity-60" />
-                            
+
                             {/* Status Lisensi Bar di Atas Foto */}
                             <div className="absolute bottom-2 left-2 right-2 bg-[#0F1E36]/90 backdrop-blur-md px-2 py-1 rounded border border-[#C5A880]/30 text-center">
                               <span className="text-[10px] font-mono text-[#C5A880] uppercase tracking-wider flex items-center justify-center gap-1">
@@ -424,7 +417,7 @@ export default function TeamPage() {
                         </span>
                         <div className="flex flex-wrap gap-1.5">
                           {member.competencies.map((comp, cIdx) => (
-                            <span 
+                            <span
                               key={cIdx}
                               className="px-2.5 py-1 rounded-md bg-[#F8F6F0] border border-[#0F1E36]/10 text-[11px] text-[#0F1E36] font-medium"
                             >
@@ -437,8 +430,8 @@ export default function TeamPage() {
 
                     {/* Tombol Aksi Langsung ke Konsultasi Resmi */}
                     <div className="pt-4 border-t border-[#0F1E36]/10 flex flex-col sm:flex-row gap-2.5">
-                      <Link 
-                        href="/contact" 
+                      <Link
+                        href="/contact"
                         className="w-full bg-[#0F1E36] hover:bg-[#142847] text-[#C5A880] font-bold py-3 px-4 rounded-xl transition-all text-xs uppercase tracking-wider flex items-center justify-center gap-2 border border-[#C5A880]/30 shadow-md"
                       >
                         <span>Jadwalkan Konsultasi dengan Partner</span>
@@ -458,10 +451,10 @@ export default function TeamPage() {
       {/* 4. CREDENTIALS & INTEGRITAS BAR ADVOKAT (NAVY & GOLD BANNER) */}
       <section className="py-20 bg-[#0F1E36] text-[#F8F6F0] relative overflow-hidden border-t border-[#C5A880]/30">
         <div className="absolute -left-20 -top-20 w-80 h-80 bg-[#C5A880]/10 rounded-full blur-[120px] pointer-events-none" />
-        
+
         <div className="container mx-auto px-6 md:px-12 relative z-10">
           <div className="max-w-5xl mx-auto bg-[#142847] border-2 border-[#C5A880]/40 rounded-3xl p-8 md:p-12 shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-8 text-center lg:text-left">
-            
+
             <div className="space-y-3 max-w-2xl">
               <div className="inline-flex items-center gap-2 text-xs font-mono text-[#C5A880] tracking-widest uppercase">
                 <ShieldCheck size={16} /> Kepatuhan Standar Perhimpunan Advokat Indonesia
@@ -475,8 +468,8 @@ export default function TeamPage() {
             </div>
 
             <div className="shrink-0 w-full sm:w-auto">
-              <Link 
-                href="/contact" 
+              <Link
+                href="/contact"
                 className="w-full sm:w-auto bg-[#C5A880] hover:bg-[#b8996e] text-[#0F1E36] font-bold px-8 py-4 rounded-xl transition-all shadow-xl flex items-center justify-center gap-2 border border-[#C5A880] text-sm whitespace-nowrap"
               >
                 Inisiasi Penanganan Perkara <ArrowRight size={17} />
