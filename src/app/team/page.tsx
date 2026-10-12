@@ -58,7 +58,7 @@ const teamMembers = [
     license: 'PERADI No. 659/PERADI/2014',
     description: 'Spesialis dalam advokasi perkara tindak pidana siber (UU ITE), dugaan tindak pidana korupsi (Tipikor), tindak pidana perpajakan, serta pendampingan langsung pemeriksaan BAP kepolisian/kejaksaan.',
     competencies: ['Cyber Crime & UU ITE', 'Litigasi Pidana Khusus (Tipikor)', 'Pendampingan BAP Darurat', 'Forensik Pembuktian Materiil'],
-    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&q=80',
     tier: 'Executive Board',
     status: 'Advokat Tersumpah Aktif'
   },
