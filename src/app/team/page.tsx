@@ -82,15 +82,12 @@ const teamMembers = [
     category: 'SUWARNO, CLA.',
     name: 'Dewi Lestari Daniswara, S.H., LL.M.',
     role: 'Paralegal',
-    practiceLead: 'Kepala Tata Kelola Korporasi & Mitigasi Hukum',
-    education: 'LL.M. in Commercial Law, University of Melbourne | S.H., Universitas Padjadjaran',
-    experience: '13+ Tahun Hukum Pasar Modal & Restrukturisasi Usaha',
-    license: 'PERADI No. 883/PERADI/2015',
+    practiceLead: 'Bantusan Operasional ',
     description: 'Fokus pada restrukturisasi utang (Kepailitan & PKPU), uji kepatuhan regulasi korporasi (Legal Due Diligence), perancangan perjanjian joint venture, dan mitigasi risiko pidana korporasi internal.',
     competencies: ['Restrukturisasi PKPU & Pailit', 'Due Diligence Transaksi', 'Kepatuhan Regulasi Bisnis', 'Mitigasi Risiko Direksi'],
     image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=800&q=80',
-    tier: 'Practice Partner',
-    status: 'Advokat Tersumpah Aktif'
+    tier: ' Paralegal',
+    status: 'Paralegalo Bersertifikasi'
   }
 ];
 
