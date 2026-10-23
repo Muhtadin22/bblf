@@ -78,7 +78,7 @@ const middleTierMembers = [
   },
   {
     id: 'farhan-rizki',
-    name: 'Muhammad Farhan Rizki, S.H.',
+    name: 'Farhan Rizki Widiyanto, S.H.',
     role: 'Junior Associate',
     tierBadge: 'Legal Counsel',
     focusArea: 'Litigasi Perdata, Pidana Umum & Legal Drafting',
@@ -174,7 +174,7 @@ const taskForceSteps = [
   {
     step: '04',
     role: 'Paralegal',
-    actor: 'Suwarno, CLA.',
+    actor: 'Suwarno, CLA. C.BLS.',
     responsibility: 'Field Investigator & Evidence Marshaller',
     desc: 'Melakukan verifikasi faktual bukti di lapangan, pemetaan saksi, dan koordinasi cepat di kepolisian maupun kejaksaan.',
     icon: Compass
