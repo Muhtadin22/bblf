@@ -166,7 +166,7 @@ const taskForceSteps = [
   {
     step: '03',
     role: 'Junior Associate',
-    actor: 'Farhan RizKI Widiyanto, S.H.',
+    actor: 'Farhan Rizki Widiyanto, S.H.',
     responsibility: 'Juridical Researcher & Legal Drafter',
     desc: 'Melakukan riset yurisprudensi Mahkamah Agung, analisis doktrin KUHP Baru, serta menyusun draf dokumen beracara peradilan.',
     icon: FileText
@@ -309,8 +309,8 @@ export default function TeamPage() {
                 key={tab.id}
                 onClick={() => setActiveTierFilter(tab.id as TeamFilterTier)}
                 className={`px-3.5 py-1.5 rounded-xl text-xs font-semibold transition-all border ${activeTierFilter === tab.id
-                    ? 'bg-[#0F1E36] text-[#C5A880] border-[#C5A880] font-bold shadow-sm'
-                    : 'bg-[#F8F6F0] text-[#0F1E36]/80 border-[#0F1E36]/15 hover:border-[#C5A880]'
+                  ? 'bg-[#0F1E36] text-[#C5A880] border-[#C5A880] font-bold shadow-sm'
+                  : 'bg-[#F8F6F0] text-[#0F1E36]/80 border-[#0F1E36]/15 hover:border-[#C5A880]'
                   }`}
               >
                 {tab.label}
