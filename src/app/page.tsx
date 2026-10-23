@@ -3,37 +3,37 @@
 import { useState } from 'react';
 import { motion, AnimatePresence, Variants } from 'framer-motion';
 import Link from 'next/link';
-import {
-  ArrowRight,
-  ShieldCheck,
-  Briefcase,
-  Award,
-  Building2,
-  Gavel,
-  Scale,
-  Users,
-  CheckCircle2,
-  Lock,
-  FileText,
-  Clock,
-  Compass,
-  BadgeCheck,
-  ChevronRight,
-  Quote,
-  Phone,
-  MessageSquare,
-  Landmark,
-  ShieldAlert,
-  AlertTriangle,
-  Search,
-  FileBadge,
-  GraduationCap,
-  PhoneCall,
+import { 
+  ArrowRight, 
+  ShieldCheck, 
+  Briefcase, 
+  Award, 
+  Building2, 
+  Gavel, 
+  Scale, 
+  Users, 
+  CheckCircle2, 
+  Lock, 
+  FileText, 
+  Clock, 
+  Compass, 
+  BadgeCheck, 
+  ChevronRight, 
+  Quote, 
+  Phone, 
+  MessageSquare, 
+  Landmark, 
+  ShieldAlert, 
+  AlertTriangle, 
+  Search, 
+  FileBadge, 
+  GraduationCap, 
+  PhoneCall, 
   Shield,
   FileCheck
 } from 'lucide-react';
 
-// --- DATA: 8 STRATEGIC PRACTICE AREAS (TEASER DENGAN CAKUPAN 2-3 KALIMAT) ---
+// --- DATA: TEASER BIDANG PRAKTIK STRATEGIS ---
 const criminalPracticeTeasers = [
   {
     id: 'pidana-korporasi',
@@ -110,7 +110,7 @@ const civilPracticeTeasers = [
   }
 ];
 
-// --- DATA: 3 TAHAPAN ALUR PENANGANAN PERKARA (LITIGATION WORKFLOW) ---
+// --- DATA: 3 TAHAPAN ALUR PENANGANAN PERKARA ---
 const litigationWorkflows = [
   {
     step: '01',
@@ -132,7 +132,7 @@ const litigationWorkflows = [
   }
 ];
 
-// --- DATA: TRACK RECORD ANONIM & ETIS ---
+// --- DATA: STUDI KASUS ANONIM ETIS ---
 const anonymousMilestones = [
   {
     category: 'Praperadilan & Due Process',
@@ -168,21 +168,19 @@ const containerVariants: Variants = {
 
 const itemVariants: Variants = {
   hidden: { opacity: 0, y: 16 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { type: 'spring', stiffness: 70, damping: 16 }
+  visible: { 
+    opacity: 1, 
+    y: 0, 
+    transition: { type: 'spring', stiffness: 70, damping: 16 } 
   }
 };
 
 export default function Home() {
-  // State Intake Cepat Section 8
   const [caseType, setCaseType] = useState<'pidana' | 'perdata'>('pidana');
   const [clientName, setClientName] = useState('');
   const [clientPhone, setClientPhone] = useState('');
   const [caseSummary, setCaseSummary] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [redirectUrl, setRedirectUrl] = useState('');
 
   const handleQuickIntake = (e: React.FormEvent) => {
     e.preventDefault();
@@ -205,7 +203,6 @@ export default function Home() {
     const encodedText = encodeURIComponent(messageLines.join('\n'));
     const generatedUrl = `https://api.whatsapp.com/send?phone=${waNumber}&text=${encodedText}`;
 
-    setRedirectUrl(generatedUrl);
     setIsSubmitting(false);
 
     try {
@@ -220,13 +217,12 @@ export default function Home() {
 
   return (
     <div className="selection:bg-[#C5A880] selection:text-[#0F1E36] bg-[#F8F6F0] text-[#0F1E36] overflow-hidden font-sans">
-
+      
       {/* =========================================================================
           1. HERO SECTION: OTORITAS INSTAN & TOMBOL AKSI GANDA
       ========================================================================= */}
       <section className="relative min-h-[92vh] flex items-center justify-center bg-[#0F1E36] overflow-hidden pt-36 pb-20 border-b border-[#C5A880]/20">
-
-        {/* Dekorasi Latar & Radial Glow Otoritatif */}
+        
         <div className="absolute inset-0 z-0 pointer-events-none opacity-30">
           <div className="absolute -top-40 -right-32 w-[650px] h-[650px] bg-[#C5A880]/10 rounded-full blur-[140px]" />
           <div className="absolute -bottom-40 -left-32 w-[550px] h-[550px] bg-[#0A1424] rounded-full blur-[120px]" />
@@ -235,13 +231,12 @@ export default function Home() {
 
         <div className="container relative z-10 mx-auto px-6 md:px-12">
           <div className="max-w-4xl mx-auto text-center">
-
+            
             <motion.div
               variants={containerVariants}
               initial="hidden"
               animate="visible"
             >
-              {/* Badge Identitas Kantor */}
               <motion.div variants={itemVariants} className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-[#142847] border border-[#C5A880]/30 shadow-inner mb-6">
                 <Gavel className="text-[#C5A880] shrink-0" size={16} />
                 <span className="text-[#C5A880] text-xs font-semibold tracking-widest uppercase font-mono">
@@ -249,7 +244,6 @@ export default function Home() {
                 </span>
               </motion.div>
 
-              {/* Tajuk Utama yang Tegas Mengenai Pembelaan Pidana & Litigasi */}
               <motion.h1 variants={itemVariants} className="font-serif text-4xl sm:text-5xl lg:text-6xl text-[#F8F6F0] font-bold mb-6 leading-[1.14]">
                 Benteng Pembelaan Pidana Tangguh, <br />
                 <span className="text-[#C5A880] relative inline-block font-serif italic mt-1">
@@ -258,16 +252,12 @@ export default function Home() {
                 </span>
               </motion.h1>
 
-              {/* Sub-Tajuk: Pembeda Kapabilitas Pidana vs Perdata Strategis */}
               <motion.p variants={itemVariants} className="text-[#F8F6F0]/85 text-base md:text-lg font-normal mb-10 leading-relaxed max-w-3xl mx-auto">
                 Mendedikasikan kompetensi utama pada pembelaan perkara pidana sejak tahap penyelidikan kepolisian, kejaksaan, praperadilan, hingga persidangan Mahkamah Agung, didukung kemahiran taktis dalam penyelesaian sengketa perdata bisnis dan pemulihan aset.
               </motion.p>
 
-              {/* Tombol Aksi Ganda (Urgent Criminal Hotline vs Scheduled Civil Consultation) */}
               <motion.div variants={itemVariants} className="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-xl mx-auto">
-
-                {/* Tombol Aksi 1: Konsultasi Pidana Darurat (Langsung WhatsApp Siaga) */}
-                <a
+                <a 
                   href="https://wa.me/6285697259015?text=Halo%20BBLF,%20saya%20membutuhkan%20pendampingan%20hukum%20pidana%20darurat%20untuk%20panggilan%20pemeriksaan/BAP/penahanan."
                   target="_blank"
                   rel="noopener noreferrer"
@@ -278,8 +268,7 @@ export default function Home() {
                   <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
                 </a>
 
-                {/* Tombol Aksi 2: Jadwal Konsultasi Perdata */}
-                <a
+                <a 
                   href="#konsultasi-langsung"
                   className="w-full sm:w-auto bg-[#142847]/95 hover:bg-[#142847] text-[#F8F6F0] font-semibold px-7 py-4 rounded-xl transition-all border border-[#C5A880]/40 flex items-center justify-center gap-2 hover:border-[#C5A880] text-xs uppercase tracking-wider"
                 >
@@ -288,7 +277,6 @@ export default function Home() {
                 </a>
               </motion.div>
 
-              {/* Note Pencegahan Redundansi: Ringkas & Langsung */}
               <motion.div variants={itemVariants} className="mt-8 text-[11px] font-mono text-[#F8F6F0]/60 flex items-center justify-center gap-2">
                 <Lock size={12} className="text-[#C5A880]" />
                 <span>Konsultasi Dilindungi Hak Tolak & Rahasia Jabatan Advokat</span>
@@ -300,53 +288,57 @@ export default function Home() {
       </section>
 
       {/* =========================================================================
-          2. CREDIBILITY & TRUST BAR (STRIP RINGKAS & FAKTUAL)
+          2. CREDIBILITY & TRUST BAR (DIPERBARUI: PENDEKATAN KUALITATIF & LEGALITAS RESMI)
       ========================================================================= */}
       <section className="relative z-20 -mt-8 px-6 md:px-12 mb-16">
         <div className="container mx-auto">
-          <div className="bg-[#0F1E36] rounded-2xl shadow-2xl p-6 md:p-7 grid grid-cols-2 lg:grid-cols-4 gap-6 border-2 border-[#C5A880]/30">
-
-            <div className="flex items-center gap-3.5 p-1 border-r border-[#C5A880]/15 last:border-r-0">
-              <div className="w-11 h-11 rounded-xl bg-[#142847] border border-[#C5A880]/40 flex items-center justify-center text-[#C5A880] shrink-0">
-                <Briefcase size={20} />
-              </div>
-              <div>
-                <h4 className="text-xl md:text-2xl font-bold text-[#F8F6F0] font-serif leading-none">500+</h4>
-                <p className="text-[#C5A880] text-[11px] font-semibold mt-1">Perkara Litigasi Ditangani</p>
-                <p className="text-[#F8F6F0]/60 text-[10px] font-light">Tingkat Pertama s/d Mahkamah Agung</p>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-3.5 p-1 border-r border-[#C5A880]/15 last:border-r-0">
-              <div className="w-11 h-11 rounded-xl bg-[#142847] border border-[#C5A880]/40 flex items-center justify-center text-[#C5A880] shrink-0">
-                <Award size={20} />
-              </div>
-              <div>
-                <h4 className="text-xl md:text-2xl font-bold text-[#F8F6F0] font-serif leading-none">15+ Tahun</h4>
-                <p className="text-[#C5A880] text-[11px] font-semibold mt-1">Pengalaman Berpraktik</p>
-                <p className="text-[#F8F6F0]/60 text-[10px] font-light">Dedikasi Advokasi Berperkara</p>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-3.5 p-1 border-r border-[#C5A880]/15 last:border-r-0">
+          <div className="bg-[#0F1E36] rounded-2xl shadow-2xl p-6 md:p-7 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 border-2 border-[#C5A880]/30">
+            
+            {/* Pilar 1: Legalitas & Lisensi Sah */}
+            <div className="flex items-center gap-3.5 p-1 border-b sm:border-b-0 sm:border-r border-[#C5A880]/15 pb-4 sm:pb-0">
               <div className="w-11 h-11 rounded-xl bg-[#142847] border border-[#C5A880]/40 flex items-center justify-center text-[#C5A880] shrink-0">
                 <BadgeCheck size={20} />
               </div>
               <div>
-                <h4 className="text-sm md:text-base font-bold text-[#F8F6F0] font-serif leading-none">PERADI Resmi</h4>
-                <p className="text-[#C5A880] text-[11px] font-semibold mt-1">Berita Acara Sumpah PT</p>
-                <p className="text-[#F8F6F0]/60 text-[10px] font-light">Lisensi Advokat Beracara Sah</p>
+                <h4 className="text-sm md:text-base font-bold text-[#F8F6F0] font-serif leading-tight">Lisensi Sah PERADI</h4>
+                <p className="text-[#C5A880] text-[11px] font-semibold mt-0.5">Berita Acara Sumpah PT</p>
+                <p className="text-[#F8F6F0]/60 text-[10px] font-light leading-snug">Wewenang Beracara Sah di Seluruh Tingkat Pengadilan</p>
               </div>
             </div>
 
+            {/* Pilar 2: Presisi Yuridis & Due Process */}
+            <div className="flex items-center gap-3.5 p-1 border-b sm:border-b-0 lg:border-r border-[#C5A880]/15 pb-4 sm:pb-0">
+              <div className="w-11 h-11 rounded-xl bg-[#142847] border border-[#C5A880]/40 flex items-center justify-center text-[#C5A880] shrink-0">
+                <ShieldAlert size={20} />
+              </div>
+              <div>
+                <h4 className="text-sm md:text-base font-bold text-[#F8F6F0] font-serif leading-tight">Presisi & Integritas</h4>
+                <p className="text-[#C5A880] text-[11px] font-semibold mt-0.5">Due Process of Law</p>
+                <p className="text-[#F8F6F0]/60 text-[10px] font-light leading-snug">Pengawalan Ketat Hukum Acara & Norma KUHP Baru</p>
+              </div>
+            </div>
+
+            {/* Pilar 3: Hak Tolak & Kerahasiaan Klien */}
+            <div className="flex items-center gap-3.5 p-1 border-b sm:border-b-0 sm:border-r border-[#C5A880]/15 pb-4 sm:pb-0">
+              <div className="w-11 h-11 rounded-xl bg-[#142847] border border-[#C5A880]/40 flex items-center justify-center text-[#C5A880] shrink-0">
+                <Lock size={20} />
+              </div>
+              <div>
+                <h4 className="text-sm md:text-base font-bold text-[#F8F6F0] font-serif leading-tight">Kerahasiaan Mutlak</h4>
+                <p className="text-[#C5A880] text-[11px] font-semibold mt-0.5">Hak Tolak Advokat</p>
+                <p className="text-[#F8F6F0]/60 text-[10px] font-light leading-snug">Perlindungan Penuh Pasal 19 UU No. 18 Tahun 2003</p>
+              </div>
+            </div>
+
+            {/* Pilar 4: Jangkauan Forum Peradilan */}
             <div className="flex items-center gap-3.5 p-1">
               <div className="w-11 h-11 rounded-xl bg-[#142847] border border-[#C5A880]/40 flex items-center justify-center text-[#C5A880] shrink-0">
                 <Landmark size={20} />
               </div>
               <div>
-                <h4 className="text-sm md:text-base font-bold text-[#F8F6F0] font-serif leading-none">Jaringan Peradilan</h4>
-                <p className="text-[#C5A880] text-[11px] font-semibold mt-1">Nasional & Lintas Wilayah</p>
-                <p className="text-[#F8F6F0]/60 text-[10px] font-light">PN, Pengadilan Niaga, Tipikor, PTUN</p>
+                <h4 className="text-sm md:text-base font-bold text-[#F8F6F0] font-serif leading-tight">Yurisdiksi Nasional</h4>
+                <p className="text-[#C5A880] text-[11px] font-semibold mt-0.5">Seluruh Kamar Peradilan</p>
+                <p className="text-[#F8F6F0]/60 text-[10px] font-light leading-snug">Litigasi PN, Pengadilan Niaga, Tipikor, PTUN, & MA</p>
               </div>
             </div>
 
@@ -359,7 +351,7 @@ export default function Home() {
       ========================================================================= */}
       <section className="py-20 bg-[#F8F6F0] border-b border-[#0F1E36]/10">
         <div className="container mx-auto px-6 md:px-12">
-
+          
           <div className="max-w-3xl mb-14">
             <span className="text-[#0F1E36] font-bold tracking-widest uppercase text-xs px-3.5 py-1.5 bg-[#C5A880]/20 border border-[#C5A880]/40 rounded-full inline-block font-mono mb-3">
               Penataan Layanan Berjenjang
@@ -372,7 +364,7 @@ export default function Home() {
             </p>
           </div>
 
-          {/* BLOK UTAMA: SPESIALISASI PIDANA (PORSI VISUAL LEBIH DOMINAN DENGAN DARK NAVY & GOLD) */}
+          {/* BLOK UTAMA: SPESIALISASI PIDANA */}
           <div className="mb-14">
             <div className="flex items-center justify-between pb-3 mb-6 border-b border-[#0F1E36]/15">
               <div className="flex items-center gap-2.5">
@@ -390,7 +382,7 @@ export default function Home() {
               {criminalPracticeTeasers.map((service) => {
                 const Icon = service.icon;
                 return (
-                  <div
+                  <div 
                     key={service.id}
                     className="bg-[#0F1E36] text-[#F8F6F0] rounded-2xl p-6 border-2 border-[#C5A880]/40 hover:border-[#C5A880] shadow-xl transition-all flex flex-col justify-between group"
                   >
@@ -416,7 +408,7 @@ export default function Home() {
                     </div>
 
                     <div className="pt-3 border-t border-[#C5A880]/20 flex items-center justify-between">
-                      <Link
+                      <Link 
                         href="/practice-areas"
                         className="text-xs font-bold text-[#C5A880] group-hover:text-white uppercase tracking-wider inline-flex items-center gap-1 transition-colors"
                       >
@@ -430,7 +422,7 @@ export default function Home() {
             </div>
           </div>
 
-          {/* BLOK PENDUKUNG: HUKUM PERDATA & SENGKETA KOMERSIAL (KARTU PUTIH GADING ELEGAN) */}
+          {/* BLOK PENDUKUNG: HUKUM PERDATA & SENGKETA KOMERSIAL */}
           <div>
             <div className="flex items-center justify-between pb-3 mb-6 border-b border-[#0F1E36]/15">
               <div className="flex items-center gap-2.5">
@@ -448,7 +440,7 @@ export default function Home() {
               {civilPracticeTeasers.map((service) => {
                 const Icon = service.icon;
                 return (
-                  <div
+                  <div 
                     key={service.id}
                     className="bg-white text-[#0F1E36] rounded-2xl p-6 border border-[#0F1E36]/15 hover:border-[#C5A880] shadow-sm hover:shadow-lg transition-all flex flex-col justify-between group"
                   >
@@ -469,7 +461,7 @@ export default function Home() {
                     </div>
 
                     <div className="pt-3 border-t border-[#0F1E36]/10">
-                      <Link
+                      <Link 
                         href="/practice-areas"
                         className="text-xs font-bold text-[#0F1E36] group-hover:text-[#C5A880] uppercase tracking-wider inline-flex items-center gap-1 transition-colors"
                       >
@@ -487,11 +479,11 @@ export default function Home() {
       </section>
 
       {/* =========================================================================
-          4. BRIEF FIRM IDENTITY & CORE VALUES (RINGKAS & TAUTAN KE ABOUT)
+          4. BRIEF FIRM IDENTITY & CORE VALUES
       ========================================================================= */}
       <section className="py-20 bg-white border-b border-[#0F1E36]/10">
         <div className="container mx-auto px-6 md:px-12 max-w-5xl">
-
+          
           <div className="bg-[#F8F6F0] rounded-3xl p-8 md:p-12 border border-[#0F1E36]/15 shadow-sm space-y-6">
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 border-b border-[#0F1E36]/10">
               <span className="text-[#0F1E36] font-bold tracking-widest uppercase text-xs font-mono px-3 py-1 bg-[#C5A880]/20 border border-[#C5A880]/40 rounded-full inline-block">
@@ -502,7 +494,6 @@ export default function Home() {
               </span>
             </div>
 
-            {/* Pernyataan Visi Singkat: Maksimal 1 Paragraf Ringkas */}
             <h3 className="font-serif text-2xl md:text-3xl font-bold text-[#0F1E36] leading-tight">
               Menjunjung Tinggi Hak Tolak, Kehati-Hatian Pembelaan, & Kepatuhan Hukum Tanpa Kompromi.
             </h3>
@@ -511,7 +502,6 @@ export default function Home() {
               Bhadrika Byakta Law Firm beroperasi dengan memegang teguh integritas etik advokat, jaminan perlindungan kerahasiaan hubungan advokat-klien (*attorney-client privilege*), serta ketegasan mengawal asas praduga tak bersalah. Setiap perkara diperjuangkan dengan kehati-hatian riset materiil guna memastikan kepastian hukum dan perlindungan hak asasi klien terlindungi seutuhnya.
             </p>
 
-            {/* Poin Nilai & Tautan Teks Menuju Halaman Tentang Kami */}
             <div className="pt-2 flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-t border-[#0F1E36]/10">
               <div className="flex items-center gap-3 text-xs text-[#0F1E36]/80 font-medium">
                 <CheckCircle2 size={16} className="text-[#C5A880]" />
@@ -522,7 +512,7 @@ export default function Home() {
                 <span>Transparansi Prosedural</span>
               </div>
 
-              <Link
+              <Link 
                 href="/about"
                 className="text-xs font-bold text-[#0F1E36] hover:text-[#C5A880] inline-flex items-center gap-1.5 uppercase tracking-wider transition-colors"
               >
@@ -540,7 +530,7 @@ export default function Home() {
       ========================================================================= */}
       <section className="py-20 bg-[#0F1E36] text-[#F8F6F0] relative overflow-hidden border-b border-[#C5A880]/20">
         <div className="container mx-auto px-6 md:px-12 relative z-10">
-
+          
           <div className="text-center max-w-2xl mx-auto mb-14">
             <span className="text-[#C5A880] font-bold tracking-widest uppercase text-xs px-3.5 py-1.5 bg-[#142847] border border-[#C5A880]/30 rounded-full inline-block font-mono">
               Alur Penanganan Prosedural
@@ -557,7 +547,7 @@ export default function Home() {
             {litigationWorkflows.map((flow, idx) => {
               const Icon = flow.icon;
               return (
-                <div
+                <div 
                   key={idx}
                   className="bg-[#142847]/80 border-2 border-[#C5A880]/30 hover:border-[#C5A880] rounded-2xl p-7 flex flex-col justify-between transition-colors group"
                 >
@@ -592,47 +582,44 @@ export default function Home() {
       </section>
 
       {/* =========================================================================
-          6. LEAD COUNSEL HIGHLIGHT (SATU FIGUR UTAMA & TAUTAN KE TEAM)
+          6. LEAD COUNSEL HIGHLIGHT (FADLY RAHMAN, S.H., S.E., M.Si)
       ========================================================================= */}
       <section className="py-20 bg-white border-b border-[#0F1E36]/10">
         <div className="container mx-auto px-6 md:px-12 max-w-5xl">
-
+          
           <div className="bg-[#F8F6F0] rounded-3xl p-8 md:p-12 border border-[#0F1E36]/15 shadow-sm">
             <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
-
-              {/* Foto Profesional Lead Counsel (4 Kolom) */}
+              
               <div className="md:col-span-5">
                 <div className="relative aspect-[3/4] rounded-2xl overflow-hidden bg-[#0F1E36] border-2 border-[#C5A880]/50 shadow-xl">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&q=80"
-                    alt=" FADLY RAHMAN, S.H.,S.E.,Msi. - Senior Partner"
-                    className="w-full h-full object-cover grayscale-[10%]"
+                  <img 
+                    src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&q=80" 
+                    alt="Fadly Rahman, S.H., S.E., M.Si - Senior Partner"
+                    className="w-full h-full object-cover grayscale-[10%]" 
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0F1E36] via-transparent to-transparent opacity-70" />
                   <div className="absolute bottom-3 left-3 right-3 bg-[#0F1E36]/90 backdrop-blur-md px-3 py-1.5 rounded-lg border border-[#C5A880]/30 text-center">
                     <span className="text-[10px] font-mono text-[#C5A880] font-bold">
-                      PERADI NO. 412/PERADI/2011 &bull; BAS PT DKI JAKARTA
+                      PERADI RESMI &bull; BAS PENGADILAN TINGGI
                     </span>
                   </div>
                 </div>
               </div>
 
-              {/* Kutipan Profesional & Kredensial Pimpinan (7 Kolom) */}
               <div className="md:col-span-7 space-y-5">
                 <div>
                   <span className="text-[10px] font-mono uppercase tracking-widest text-[#C5A880] font-bold block mb-1">
-                    Lead Counsel & Founder
+                    Senior Partner & Lead Counsel
                   </span>
                   <h3 className="font-serif text-2xl md:text-3xl font-bold text-[#0F1E36]">
-                    FADLY RAHMAN, S.H.,S.E.,Msi.
+                    Fadly Rahman, S.H., S.E., M.Si
                   </h3>
                   <p className="text-xs font-semibold text-[#0F1E36]/70 mt-0.5">
-                    Senior Partner & Advokat Litigasi Senior
+                    Senior Partner & Advokat Litigasi
                   </p>
                 </div>
 
-                {/* Kutipan Integritas Penegakan Hukum */}
                 <div className="p-5 rounded-2xl bg-white border border-[#0F1E36]/10 relative">
                   <Quote className="text-[#C5A880]/20 absolute top-3 right-3" size={28} />
                   <p className="text-xs sm:text-sm text-[#0F1E36] italic leading-relaxed font-normal">
@@ -643,17 +630,16 @@ export default function Home() {
                 <div className="space-y-1.5 text-xs text-[#0F1E36]/80 font-medium">
                   <div className="flex items-center gap-2">
                     <GraduationCap size={15} className="text-[#C5A880]" />
-                    <span>Doktor Ilmu Hukum UI | LL.M. Leiden University</span>
+                    <span>Magister Ilmu Administrasi / Hukum | Sarjana Hukum & Sarjana Ekonomi</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <Briefcase size={15} className="text-[#C5A880]" />
-                    <span>18+ Tahun Praktik Beracara Litigasi Peradilan</span>
+                    <FileBadge size={15} className="text-[#C5A880]" />
+                    <span>Advokat Tersumpah Pengadilan Tinggi & Anggota Resmi PERADI</span>
                   </div>
                 </div>
 
-                {/* Tombol Menuju Seluruh Rekanan Advokat */}
                 <div className="pt-2">
-                  <Link
+                  <Link 
                     href="/team"
                     className="inline-flex items-center gap-2 bg-[#0F1E36] hover:bg-[#142847] text-[#C5A880] px-6 py-3 rounded-xl text-xs uppercase tracking-wider font-bold transition-colors border border-[#C5A880]/30 shadow-md"
                   >
@@ -674,7 +660,7 @@ export default function Home() {
       ========================================================================= */}
       <section className="py-20 bg-[#F8F6F0] border-b border-[#0F1E36]/10">
         <div className="container mx-auto px-6 md:px-12 max-w-5xl">
-
+          
           <div className="text-center max-w-2xl mx-auto mb-14">
             <span className="text-[#0F1E36] font-bold tracking-widest uppercase text-xs px-3.5 py-1.5 bg-[#C5A880]/20 border border-[#C5A880]/40 rounded-full inline-block font-mono">
               Rekam Jejak Taktis Litigasi
@@ -689,7 +675,7 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {anonymousMilestones.map((item, idx) => (
-              <div
+              <div 
                 key={idx}
                 className="bg-white p-7 rounded-2xl border border-[#0F1E36]/15 hover:border-[#C5A880] transition-colors flex flex-col justify-between shadow-sm space-y-4"
               >
@@ -727,7 +713,6 @@ export default function Home() {
             ))}
           </div>
 
-          {/* Note Kepatuhan Kode Etik Advokat */}
           <p className="text-center text-[11px] font-mono text-[#0F1E36]/50 mt-8">
             *Berdasarkan Kode Etik Advokat Indonesia (KEAI), kami tidak menjanjikan kemenangan mutlak atas setiap perkara. Hasil penanganan bergantung pada fakta yuridis dan independensi majelis peradilan.
           </p>
@@ -736,13 +721,13 @@ export default function Home() {
       </section>
 
       {/* =========================================================================
-          8. DIRECT CONSULTATION BOOKING & URGENT CONTACT (TITIK KONVERSI UTAMA)
+          8. DIRECT CONSULTATION BOOKING & URGENT CONTACT
       ========================================================================= */}
       <section id="konsultasi-langsung" className="py-20 bg-[#0F1E36] text-[#F8F6F0] relative overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 bg-[#C5A880]/10 rounded-full blur-[120px] pointer-events-none" />
-
+        
         <div className="container mx-auto px-6 md:px-12 relative z-10 max-w-5xl">
-
+          
           <div className="text-center max-w-2xl mx-auto mb-14">
             <span className="text-[#C5A880] font-bold tracking-widest uppercase text-xs px-3.5 py-1.5 bg-[#142847] border border-[#C5A880]/30 rounded-full inline-block font-mono">
               Pusat Registrasi & Hotline Siaga
@@ -756,8 +741,7 @@ export default function Home() {
           </div>
 
           <div className="bg-[#142847] border-2 border-[#C5A880]/40 rounded-3xl shadow-2xl p-8 md:p-12 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-
-            {/* Sisi Kiri: Formulir Intake Singkat (7 Kolom) */}
+            
             <div className="lg:col-span-7 space-y-5">
               <div className="pb-3 border-b border-[#C5A880]/20 flex items-center justify-between">
                 <span className="text-xs font-mono text-[#C5A880] flex items-center gap-1.5 font-bold">
@@ -767,8 +751,6 @@ export default function Home() {
               </div>
 
               <form onSubmit={handleQuickIntake} className="space-y-4">
-
-                {/* Pilihan Cepat Kategori Perkara */}
                 <div>
                   <label className="block text-[11px] font-mono text-[#F8F6F0]/80 uppercase mb-1.5">
                     1. Jenis Perkara *
@@ -777,10 +759,11 @@ export default function Home() {
                     <button
                       type="button"
                       onClick={() => setCaseType('pidana')}
-                      className={`py-3 px-4 rounded-xl text-xs font-bold border transition-all flex items-center justify-center gap-2 ${caseType === 'pidana'
-                        ? 'bg-[#C5A880] text-[#0F1E36] border-[#C5A880] shadow'
-                        : 'bg-[#0F1E36] text-[#F8F6F0] border-[#C5A880]/30 hover:border-[#C5A880]'
-                        }`}
+                      className={`py-3 px-4 rounded-xl text-xs font-bold border transition-all flex items-center justify-center gap-2 ${
+                        caseType === 'pidana'
+                          ? 'bg-[#C5A880] text-[#0F1E36] border-[#C5A880] shadow'
+                          : 'bg-[#0F1E36] text-[#F8F6F0] border-[#C5A880]/30 hover:border-[#C5A880]'
+                      }`}
                     >
                       <Gavel size={15} />
                       <span>Litigasi Pidana (Mendesak)</span>
@@ -789,10 +772,11 @@ export default function Home() {
                     <button
                       type="button"
                       onClick={() => setCaseType('perdata')}
-                      className={`py-3 px-4 rounded-xl text-xs font-bold border transition-all flex items-center justify-center gap-2 ${caseType === 'perdata'
-                        ? 'bg-[#C5A880] text-[#0F1E36] border-[#C5A880] shadow'
-                        : 'bg-[#0F1E36] text-[#F8F6F0] border-[#C5A880]/30 hover:border-[#C5A880]'
-                        }`}
+                      className={`py-3 px-4 rounded-xl text-xs font-bold border transition-all flex items-center justify-center gap-2 ${
+                        caseType === 'perdata'
+                          ? 'bg-[#C5A880] text-[#0F1E36] border-[#C5A880] shadow'
+                          : 'bg-[#0F1E36] text-[#F8F6F0] border-[#C5A880]/30 hover:border-[#C5A880]'
+                      }`}
                     >
                       <Scale size={15} />
                       <span>Sengketa Perdata & Bisnis</span>
@@ -800,13 +784,12 @@ export default function Home() {
                   </div>
                 </div>
 
-                {/* Nama & Kontak Terenkripsi */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-[11px] font-mono text-[#F8F6F0]/80 uppercase mb-1">
                       Nama Lengkap *
                     </label>
-                    <input
+                    <input 
                       type="text"
                       required
                       value={clientName}
@@ -820,7 +803,7 @@ export default function Home() {
                     <label className="block text-[11px] font-mono text-[#F8F6F0]/80 uppercase mb-1">
                       Nomor WhatsApp / Telepon *
                     </label>
-                    <input
+                    <input 
                       type="tel"
                       required
                       value={clientPhone}
@@ -831,12 +814,11 @@ export default function Home() {
                   </div>
                 </div>
 
-                {/* Ringkasan Singkat Persoalan */}
                 <div>
                   <label className="block text-[11px] font-mono text-[#F8F6F0]/80 uppercase mb-1">
                     Ringkasan Singkat Persoalan Hukum *
                   </label>
-                  <textarea
+                  <textarea 
                     rows={3}
                     required
                     value={caseSummary}
@@ -846,7 +828,7 @@ export default function Home() {
                   />
                 </div>
 
-                <button
+                <button 
                   type="submit"
                   disabled={isSubmitting}
                   className="w-full bg-[#C5A880] hover:bg-[#b8996e] text-[#0F1E36] font-bold py-3.5 rounded-xl transition-all shadow-xl text-xs uppercase tracking-wider flex items-center justify-center gap-2 border border-[#C5A880]"
@@ -857,7 +839,6 @@ export default function Home() {
               </form>
             </div>
 
-            {/* Sisi Kanan: Saluran Kontak Darurat 24 Jam (5 Kolom) */}
             <div className="lg:col-span-5 bg-[#0F1E36] p-7 rounded-2xl border border-[#C5A880]/30 space-y-6 flex flex-col justify-between h-full">
               <div>
                 <div className="inline-flex items-center gap-1.5 text-[10px] font-mono uppercase tracking-widest text-[#C5A880] font-bold mb-2">
@@ -873,14 +854,14 @@ export default function Home() {
                 </p>
 
                 <div className="pt-4 space-y-3">
-                  <a
+                  <a 
                     href="tel:+6285697259015"
                     className="w-full bg-[#C5A880] hover:bg-[#b8996e] text-[#0F1E36] font-bold px-5 py-3 rounded-xl text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 border border-[#C5A880]"
                   >
                     <Phone size={15} /> Panggil Hotline (+62 856-9725-9015)
                   </a>
 
-                  <a
+                  <a 
                     href="https://wa.me/6285697259015?text=Halo%20BBLF,%20saya%20membutuhkan%20pendampingan%20hukum%20pidana%20darurat%20segera."
                     target="_blank"
                     rel="noopener noreferrer"
@@ -891,7 +872,6 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Pencegahan Redundansi: Penjelasan Navigasi Menu Kontak */}
               <div className="pt-4 border-t border-[#C5A880]/20 text-[11px] text-[#F8F6F0]/60 leading-relaxed font-light">
                 <p>
                   *Peta lokasi kantor fisik di Ruko Silktown Avenue, jam kerja tatap muka, dan email resmi departemen tersedia lengkap di menu{' '}

@@ -75,10 +75,10 @@ const coreValues = [
 
 // --- DATA: PROFIL TUNGGAL MITRA UTAMA (FADLY RAHMAN) ---
 const leadPartner = {
-  name: 'Fadly Rahman, S.H., M.H.',
+  name: 'Fadly Rahman, S.H., S.E., M.Si.',
   role: 'Managing Partner & Pendiri Firma',
   chamberRole: 'Ketua Kamar Litigasi Pidana & Penyelesaian Sengketa Komersial',
-  education: 'Magister Ilmu Hukum | Sarjana Hukum (Konsentrasi Hukum Pidana & Acara Peradilan)',
+  education: 'Sarjana Hukum (Konsentrasi Hukum Pidana & Acara Peradilan)',
   license: 'PERADI DPC Jakarta & Tunduk Kode Etik Advokat Indonesia (KEAI)',
   basNumber: 'Berita Acara Sumpah (BAS) Resmi Pengadilan Tinggi',
   experience: '15+ Tahun Jam Terbang Praktik Litigasi Peradilan',

@@ -3,24 +3,24 @@
 import { useState } from 'react';
 import { motion, AnimatePresence, Variants } from 'framer-motion';
 import Link from 'next/link';
-import { 
-  Scale, 
-  ShieldCheck, 
-  Gavel, 
-  Building2, 
-  BadgeCheck, 
-  FileBadge, 
-  GraduationCap, 
-  Briefcase, 
-  ArrowRight, 
-  Quote, 
-  PhoneCall, 
-  MessageSquare, 
-  UserCheck, 
-  Users, 
-  FileText, 
-  Lock, 
-  Shield, 
+import {
+  Scale,
+  ShieldCheck,
+  Gavel,
+  Building2,
+  BadgeCheck,
+  FileBadge,
+  GraduationCap,
+  Briefcase,
+  ArrowRight,
+  Quote,
+  PhoneCall,
+  MessageSquare,
+  UserCheck,
+  Users,
+  FileText,
+  Lock,
+  Shield,
   Landmark,
   ChevronRight,
   ChevronDown,
@@ -95,18 +95,18 @@ const middleTierMembers = [
   },
   {
     id: 'suwarno',
-    name: 'Suwarno, CLA.',
+    name: 'Suwarno, CLA.,C.BLS.',
     role: 'Paralegal',
     tierBadge: 'Case Support & Evidence',
-    focusArea: 'Investigasi Bukti Materiil & Tata Kelola Perkara Lapangan',
+    focusArea: 'Asistensi Yuridis, Manajemen Berkas Perkara & Investigasi Bukti Lapangan',
     education: 'Certified Legal Auditor / Certified Legal Assistant (CLA)',
     credential: 'Certified Legal Assistant / Registrasi Resmi Kantor Hukum',
     basNumber: 'Registrasi Paralegal Litigasi BBLF',
     experience: 'Spesialis Penelusuran Fakta & Penanganan Saksi Lapangan',
     duties: [
-      'Pencarian, Verifikasi, & Pengamanan Alat Bukti Lapangan',
-      'Koordinasi Administrasi Pemeriksaan di Kantor Kepolisian/Kejaksaan',
-      'Penyusunan Kronologi Fakta & Matriks Bukti Perkara'
+      'Asistensi penelusuran fakta materiil, dokumen legal, dan penyusunan matriks alat bukti',
+      'Penyusunan draf awal dokumen administratif hukum, somasi, dan kronologi perkara di bawah supervisi advokat',
+      'Koordinasi lapangan terkait verifikasi berkas dan registrasi perkara di instansi penegak hukum maupun pengadilan'
     ],
     image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=800&q=80'
   }
@@ -123,8 +123,7 @@ const staffMembers = [
     education: 'Certified Professional Investigator (CPI) & Administrasi Hukum',
     badge: 'Legal Operations Support',
     duties: [
-      'Penjadwalan Konsultasi Klien & Rapat Persiapan Sidang',
-      'Registrasi Administrasi E-Court & E-Litigation Mahkamah Agung',
+
       'Protokol Kerahasiaan Arsip Berkas Perkara Klien'
     ],
     image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=800&q=80'
@@ -139,8 +138,8 @@ const staffMembers = [
     badge: 'Secretariat & Registry',
     duties: [
       'Pengelolaan Surat Masuk/Keluar, Somasi, & Surat Kuasa Khusus',
-      'Pelayanan Registrasi Klien & Logistik Persidangan Peradilan',
-      'Verifikasi Dokumen Kelengkapan Administrasi Lembaga'
+
+
     ],
     image: 'https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=800&q=80'
   }
@@ -167,7 +166,7 @@ const taskForceSteps = [
   {
     step: '03',
     role: 'Junior Associate',
-    actor: 'Muhammad Farhan Rizki, S.H.',
+    actor: 'Farhan RizKI Widiyanto, S.H.',
     responsibility: 'Juridical Researcher & Legal Drafter',
     desc: 'Melakukan riset yurisprudensi Mahkamah Agung, analisis doktrin KUHP Baru, serta menyusun draf dokumen beracara peradilan.',
     icon: FileText
@@ -221,10 +220,10 @@ const containerVariants: Variants = {
 
 const itemVariants: Variants = {
   hidden: { opacity: 0, y: 16 },
-  visible: { 
-    opacity: 1, 
-    y: 0, 
-    transition: { type: 'spring', stiffness: 70, damping: 16 } 
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { type: 'spring', stiffness: 70, damping: 16 }
   }
 };
 
@@ -238,10 +237,10 @@ export default function TeamPage() {
 
   return (
     <div className="selection:bg-[#C5A880] selection:text-[#0F1E36] bg-[#F8F6F0] text-[#0F1E36] font-sans overflow-hidden">
-      
+
       {/* 1. HERO SECTION: OTORITAS DEWAN ADVOKAT & HIERARKI KANTOR HUKUM */}
       <section className="relative min-h-[65vh] flex items-center justify-center bg-[#0F1E36] overflow-hidden pt-36 pb-20 border-b border-[#C5A880]/20">
-        
+
         {/* Dekorasi Latar & Radial Glow */}
         <div className="absolute inset-0 z-0 pointer-events-none opacity-30">
           <div className="absolute -top-36 -right-24 w-[600px] h-[600px] bg-[#C5A880]/10 rounded-full blur-[140px]" />
@@ -292,7 +291,7 @@ export default function TeamPage() {
       {/* 2. INTERACTIVE TIER FILTER BAR (NAVIGASI TINGKATAN TIM) */}
       <section className="bg-white border-b border-[#0F1E36]/10 py-5 sticky top-20 z-30 shadow-sm backdrop-blur-md bg-white/95">
         <div className="container mx-auto px-6 md:px-12 flex flex-wrap items-center justify-between gap-4">
-          
+
           <div className="flex items-center gap-2">
             <span className="text-xs font-mono uppercase font-bold text-[#0F1E36] tracking-wider">
               Hierarki Penugasan:
@@ -309,11 +308,10 @@ export default function TeamPage() {
               <button
                 key={tab.id}
                 onClick={() => setActiveTierFilter(tab.id as TeamFilterTier)}
-                className={`px-3.5 py-1.5 rounded-xl text-xs font-semibold transition-all border ${
-                  activeTierFilter === tab.id
+                className={`px-3.5 py-1.5 rounded-xl text-xs font-semibold transition-all border ${activeTierFilter === tab.id
                     ? 'bg-[#0F1E36] text-[#C5A880] border-[#C5A880] font-bold shadow-sm'
                     : 'bg-[#F8F6F0] text-[#0F1E36]/80 border-[#0F1E36]/15 hover:border-[#C5A880]'
-                }`}
+                  }`}
               >
                 {tab.label}
               </button>
@@ -351,7 +349,7 @@ export default function TeamPage() {
 
               {/* KARTU PROFIL SENIOR PARTNER */}
               <div className="max-w-6xl mx-auto relative rounded-3xl p-2.5 bg-gradient-to-b from-[#C5A880] via-[#C5A880]/30 to-[#0F1E36] shadow-2xl">
-                
+
                 {/* Ornamen Sudut Emas */}
                 <div className="absolute top-4 left-4 w-4 h-4 border-t-2 border-l-2 border-[#C5A880] pointer-events-none z-20" />
                 <div className="absolute top-4 right-4 w-4 h-4 border-t-2 border-r-2 border-[#C5A880] pointer-events-none z-20" />
@@ -362,18 +360,18 @@ export default function TeamPage() {
                   <div className="absolute top-0 right-0 w-64 h-64 bg-[#C5A880]/5 rounded-bl-full pointer-events-none" />
 
                   <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-                    
+
                     {/* Foto Paspartu Senior Partner */}
                     <div className="lg:col-span-4">
                       <div className="relative aspect-[3/4] rounded-2xl overflow-hidden bg-[#142847] border-2 border-[#C5A880] shadow-2xl group">
                         {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img 
-                          src={seniorPartner.image} 
+                        <img
+                          src={seniorPartner.image}
                           alt={seniorPartner.name}
-                          className="w-full h-full object-cover grayscale-[10%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" 
+                          className="w-full h-full object-cover grayscale-[10%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-[#0F1E36] via-transparent to-transparent opacity-80" />
-                        
+
                         <div className="absolute bottom-3 left-3 right-3 bg-[#0F1E36]/95 backdrop-blur-md px-3 py-2 rounded-xl border border-[#C5A880]/40 text-center">
                           <span className="text-[10px] font-mono text-[#C5A880] font-bold uppercase tracking-wider block">
                             {seniorPartner.experience}
@@ -392,11 +390,11 @@ export default function TeamPage() {
                           <BadgeCheck size={14} />
                           <span>PIMPINAN DEWAN ADVOKAT</span>
                         </div>
-                        
+
                         <h3 className="font-serif text-3xl sm:text-4xl font-bold text-[#F8F6F0] leading-tight">
                           {seniorPartner.name}
                         </h3>
-                        
+
                         <p className="text-sm font-semibold text-[#C5A880] mt-1">
                           {seniorPartner.role} &bull; {seniorPartner.chamberTitle}
                         </p>
@@ -434,7 +432,7 @@ export default function TeamPage() {
                         </span>
                         <div className="flex flex-wrap gap-2">
                           {seniorPartner.specialties.map((spec, sIdx) => (
-                            <span 
+                            <span
                               key={sIdx}
                               className="px-3 py-1 rounded-lg bg-[#142847] border border-[#C5A880]/30 text-xs text-[#F8F6F0] font-medium"
                             >
@@ -446,7 +444,7 @@ export default function TeamPage() {
 
                       {/* Tombol Aksi Konsultasi Senior Partner */}
                       <div className="pt-3 border-t border-[#C5A880]/20 flex flex-col sm:flex-row gap-3">
-                        <Link 
+                        <Link
                           href="/contact"
                           className="bg-[#C5A880] hover:bg-[#b8996e] text-[#0F1E36] font-bold px-7 py-3.5 rounded-xl text-xs uppercase tracking-wider text-center transition-all shadow-lg border border-[#C5A880] inline-flex items-center justify-center gap-2"
                         >
@@ -454,7 +452,7 @@ export default function TeamPage() {
                           <ArrowRight size={14} />
                         </Link>
 
-                        <a 
+                        <a
                           href="https://wa.me/6285697259015?text=Halo%20BBLF,%20saya%20ingin%20berkonsultasi%20dengan%20Senior%20Partner%20Fadly%20Rahman."
                           target="_blank"
                           rel="noopener noreferrer"
@@ -498,23 +496,23 @@ export default function TeamPage() {
               {/* GRID 3 KARTU BERBORDER TEGAS & ELEGAN */}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
                 {middleTierMembers.map((member) => (
-                  <div 
+                  <div
                     key={member.id}
                     className="relative rounded-3xl p-1.5 bg-gradient-to-b from-[#0F1E36] via-[#C5A880]/40 to-[#0F1E36] shadow-xl hover:shadow-2xl transition-all group flex flex-col justify-between"
                   >
                     <div className="bg-white rounded-[22px] border border-[#0F1E36]/15 p-6 md:p-7 flex flex-col justify-between h-full relative overflow-hidden">
-                      
+
                       <div>
                         {/* Foto Formal Berpaspartu Navy-Gold */}
                         <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-[#0F1E36] border-2 border-[#C5A880]/40 mb-5">
                           {/* eslint-disable-next-line @next/next/no-img-element */}
-                          <img 
-                            src={member.image} 
+                          <img
+                            src={member.image}
                             alt={member.name}
-                            className="w-full h-full object-cover grayscale-[10%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500" 
+                            className="w-full h-full object-cover grayscale-[10%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500"
                           />
                           <div className="absolute inset-0 bg-gradient-to-t from-[#0F1E36] via-transparent to-transparent opacity-70" />
-                          
+
                           <div className="absolute top-3 left-3 bg-[#0F1E36]/90 backdrop-blur-md px-2.5 py-1 rounded-md border border-[#C5A880]/30 text-[10px] font-mono text-[#C5A880] font-bold uppercase">
                             {member.tierBadge}
                           </div>
@@ -533,7 +531,7 @@ export default function TeamPage() {
                         <h3 className="font-serif font-bold text-xl text-[#0F1E36] leading-snug mb-2">
                           {member.name}
                         </h3>
-                        
+
                         <p className="text-xs text-[#0F1E36]/80 font-medium mb-4 leading-relaxed">
                           {member.focusArea}
                         </p>
@@ -566,7 +564,7 @@ export default function TeamPage() {
 
                       {/* Tombol Kontak Cepat */}
                       <div className="pt-3 border-t border-[#0F1E36]/10">
-                        <Link 
+                        <Link
                           href="/contact"
                           className="w-full bg-[#0F1E36] hover:bg-[#142847] text-[#C5A880] py-2.5 rounded-xl text-[11px] font-bold uppercase tracking-wider text-center block transition-colors border border-[#C5A880]/30 shadow"
                         >
@@ -606,7 +604,7 @@ export default function TeamPage() {
               {/* GRID 2 KARTU STAF BERBORDER BERWIBAWA & SOLID */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                 {staffMembers.map((staff) => (
-                  <div 
+                  <div
                     key={staff.id}
                     className="bg-white rounded-3xl p-7 border-2 border-[#0F1E36]/20 hover:border-[#C5A880] transition-all shadow-md hover:shadow-xl flex flex-col justify-between group"
                   >
@@ -614,10 +612,10 @@ export default function TeamPage() {
                       <div className="flex items-center gap-5 mb-5">
                         <div className="relative w-20 h-20 rounded-2xl overflow-hidden bg-[#0F1E36] border-2 border-[#C5A880]/40 shrink-0">
                           {/* eslint-disable-next-line @next/next/no-img-element */}
-                          <img 
-                            src={staff.image} 
+                          <img
+                            src={staff.image}
                             alt={staff.name}
-                            className="w-full h-full object-cover grayscale-[15%] group-hover:grayscale-0 transition-all" 
+                            className="w-full h-full object-cover grayscale-[15%] group-hover:grayscale-0 transition-all"
                           />
                         </div>
                         <div>
@@ -667,7 +665,7 @@ export default function TeamPage() {
       {/* 4. ARSITEKTUR GUGUS TUGAS PERKARA (CASE TASK FORCE ARCHITECTURE) */}
       <section className="py-24 bg-[#0F1E36] text-[#F8F6F0] relative overflow-hidden border-b border-[#C5A880]/20">
         <div className="container mx-auto px-6 md:px-12 relative z-10">
-          
+
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="text-[#C5A880] font-bold tracking-widest uppercase text-xs px-3.5 py-1.5 bg-[#142847] border border-[#C5A880]/30 rounded-full inline-block font-mono">
               Collaborative Litigation Task Force
@@ -684,7 +682,7 @@ export default function TeamPage() {
             {taskForceSteps.map((task, idx) => {
               const Icon = task.icon;
               return (
-                <div 
+                <div
                   key={idx}
                   className="bg-[#142847]/80 border-2 border-[#C5A880]/30 hover:border-[#C5A880] rounded-2xl p-6 flex flex-col justify-between transition-colors group"
                 >
@@ -727,7 +725,7 @@ export default function TeamPage() {
       {/* 5. STANDAR INTEGRITAS & SERTIFIKASI DEWAN ADVOKAT */}
       <section className="py-20 bg-white border-b border-[#0F1E36]/10">
         <div className="container mx-auto px-6 md:px-12 max-w-5xl">
-          
+
           <div className="bg-[#F8F6F0] rounded-3xl p-8 md:p-12 border border-[#0F1E36]/15 shadow-sm space-y-8">
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-6 border-b border-[#0F1E36]/10">
               <div>
@@ -787,7 +785,7 @@ export default function TeamPage() {
       {/* 6. FAQ PENUGASAN TIM HUKUM & REPRESENTASI PERSIDANGAN */}
       <section className="py-24 bg-[#F8F6F0] border-b border-[#0F1E36]/10">
         <div className="container mx-auto px-6 md:px-12 max-w-4xl">
-          
+
           <div className="text-center mb-14">
             <span className="text-[#0F1E36] font-bold tracking-widest uppercase text-xs px-3.5 py-1.5 bg-[#C5A880]/20 border border-[#C5A880]/40 rounded-full inline-flex items-center gap-1.5 font-mono">
               <HelpCircle size={14} className="text-[#0F1E36]" /> Klarifikasi Penugasan Advokat
@@ -804,7 +802,7 @@ export default function TeamPage() {
             {teamFaqs.map((faq, index) => {
               const isOpen = openFaqIdx === index;
               return (
-                <div 
+                <div
                   key={index}
                   className="bg-white rounded-2xl border border-[#0F1E36]/10 hover:border-[#C5A880]/60 shadow-sm overflow-hidden transition-all"
                 >
@@ -842,10 +840,10 @@ export default function TeamPage() {
       {/* 7. CLOSING CALL TO ACTION (CTA) & INISIASI KONSULTASI PERKARA */}
       <section className="py-20 bg-[#0F1E36] text-[#F8F6F0] relative overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 bg-[#C5A880]/10 rounded-full blur-[120px] pointer-events-none" />
-        
+
         <div className="container mx-auto px-6 md:px-12 relative z-10">
           <div className="max-w-4xl mx-auto bg-[#142847] border-2 border-[#C5A880]/40 rounded-3xl p-8 md:p-14 shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-8 text-center lg:text-left">
-            
+
             <div className="space-y-3 max-w-xl">
               <div className="inline-flex items-center gap-2 text-xs text-[#C5A880] font-mono tracking-wider uppercase">
                 <Lock size={14} /> Jaminan Kerahasiaan Bersama Dewan Advokat
@@ -859,14 +857,14 @@ export default function TeamPage() {
             </div>
 
             <div className="flex flex-col sm:flex-row lg:flex-col gap-3 shrink-0 w-full sm:w-auto">
-              <Link 
-                href="/contact" 
+              <Link
+                href="/contact"
                 className="w-full sm:w-auto bg-[#C5A880] hover:bg-[#b8996e] text-[#0F1E36] font-bold px-8 py-4 rounded-xl transition-all shadow-xl flex items-center justify-center gap-2 border border-[#C5A880] text-xs uppercase tracking-wider whitespace-nowrap"
               >
                 <span>Inisiasi Penanganan Perkara</span>
                 <ArrowRight size={16} />
               </Link>
-              
+
               <a
                 href="https://wa.me/6285697259015?text=Halo%20BBLF,%20saya%20ingin%20berkonsultasi%20dengan%20tim%20advokat%20secara%20rahasia."
                 target="_blank"
